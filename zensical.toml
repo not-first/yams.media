@@ -5,8 +5,39 @@ site_description = "YAMS is a basic but powerful media server installation scrip
 site_author = "YAMS Contributors"
 copyright = "&copy; 2025 YAMS Contributors"
 repo_url = "https://gitlab.com/rogs/yams"
-repo_name = "rogs/yams"
+repo_name = "YAMS"
 extra_css = ["stylesheets/extra.css"]
+
+# Social links in footer
+[[project.extra.social]]
+icon = "fontawesome/brands/discord"
+link = "https://discord.gg/Gwae3tNMST"
+name = "Join YAMS Discord"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/comments"
+link = "https://forum.yams.media"
+name = "YAMS Forum"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/gitlab"
+link = "https://gitlab.com/rogs/yams"
+name = "YAMS on GitLab"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/rogsme/yams"
+name = "YAMS on GitHub"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/git-alt"
+link = "https://git.rogs.me/rogs/yams"
+name = "YAMS on Gitea"
+
+[[project.extra.social]]
+icon = "fontawesome/solid/mug-hot"
+link = "https://www.buymeacoffee.com/rogs"
+name = "Support YAMS"
 
 
 # Directory configuration
@@ -65,10 +96,22 @@ nav = [
 
 # Theme configuration
 [project.theme]
-variant = "classic"
 logo = "pics/logo.png"
 favicon = "favicon.ico"
 custom_dir = "overrides"
+
+# Enable navigation features
+features = [
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.tabs",
+  "navigation.sections",
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.top",
+  "navigation.footer",
+  "toc.follow",
+]
 
 # Palette toggle for light mode
 [[project.theme.palette]]
@@ -83,15 +126,3 @@ scheme = "slate"
 primary = "custom"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
-
-# Enable navigation features
-features = [
-  "navigation.instant",
-  "navigation.instant.prefetch",
-  "navigation.tabs",
-  "navigation.sections",
-  "navigation.indexes",
-  "navigation.path",
-  "navigation.top",
-  "toc.follow",
-]
