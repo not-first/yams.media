@@ -106,7 +106,7 @@ I use a combination of **Cloudflare Tunnels** and **WireGuard VPN** to solve dif
 Since my Raspberry Pi bridges both my home network and the WireGuard network, I configured Pi-hole to route custom domains internally:
 
 ```bash
-# in /etc/pihole/pihole.toml   
+# in /etc/pihole/pihole.toml
 hosts = [
    "10.8.0.2 emby.my.domain",
    # other hosts for different services
@@ -141,11 +141,11 @@ This setup gives me the best of both worlds - easy access for family members and
 
 This is advanced territory! If you're determined to proceed:
 1. Start with the awesome lists linked above
-2. Consider asking for help in our [Discord](https://discord.gg/Gwae3tNMST) or [Matrix](https://matrix.to/#/#yams-space:rogs.me) chat
+2. Consider asking for help in our [Discord](https://discord.gg/Gwae3tNMST)
 3. Remember: proceed at your own risk!
 
 **Remember**: The safest server is one that's not exposed to the internet at all! 🔒
 
---- 
+---
 
 *Thanks to "Andy The Goat" on Discord for contributing to this guide!*

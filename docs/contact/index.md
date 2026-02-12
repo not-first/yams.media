@@ -7,11 +7,10 @@ weight: 100
 
 # Let's Connect! 🤝
 
-Got questions? Suggestions? Just want to say hi? We've got plenty of ways to reach out! 
+Got questions? Suggestions? Just want to say hi? We've got plenty of ways to reach out!
 
 ## Community Hangouts 🏡
 
-- 💬 Matrix Space: [#yams-space:rogs.me](https://matrix.to/#/#yams-space:rogs.me)
 - 🎮 Discord Server: [YAMS Discord](https://discord.gg/Gwae3tNMST)
 - Official Forum 📋: [YAMS Forum](https://forum.yams.media)
 
@@ -20,7 +19,7 @@ Got questions? Suggestions? Just want to say hi? We've got plenty of ways to rea
 - Email: `[roger at rogs.me]`. Replace `at` with `@` (fuck you, email bots)
 - GPG:
   + **Fingerprint:** `ADDF BCB7 8B86 8D93 FC4E 3224 C7EC E9C6 C36E C2E6`
-  + **Import Command:** 
+  + **Import Command:**
   ```bash
   curl -sL https://rogs.me/rogs.txt | gpg --import
   ```

@@ -57,7 +57,6 @@ nav = [
   { "Contact" = "contact/index.md" },
   { "Forum" = "https://forum.yams.media" },
   { "Discord" = "https://discord.gg/Gwae3tNMST" },
-  { "Matrix" = "https://matrix.to/#/#yams-space:rogs.me" },
 ]
 
 # Theme configuration

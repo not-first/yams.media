@@ -8,7 +8,7 @@ summary: Everything you need to know about configuring and using a VPN with YAMS
 
 # Keeping Your Downloads Private 🔒
 
-Let's talk about VPNs! While they might seem like an optional extra, **you should always use a VPN when downloading torrents**. It's not just about privacy - it's about keeping you safe and sound on the internet! 
+Let's talk about VPNs! While they might seem like an optional extra, **you should always use a VPN when downloading torrents**. It's not just about privacy - it's about keeping you safe and sound on the internet!
 
 YAMS uses [gluetun](https://github.com/qdm12/gluetun) to manage VPN connections. It's like a super-smart traffic controller for your downloads! 🚦
 
@@ -163,7 +163,7 @@ Here's how your `gluetun` service in `docker-compose.yaml` should look for a fre
       - 8388:8388/tcp # Shadowsocks
       - 8388:8388/udp # Shadowsocks
       - 8003:8000/tcp # Admin
-      - 8080:8080/tcp # gluetun 
+      - 8080:8080/tcp # gluetun
       - 8081:8081/tcp # gluetun
     environment:
       - VPN_SERVICE_PROVIDER=protonvpn
@@ -213,6 +213,6 @@ Want to double-check that your torrent client is really using the VPN? Head over
 If you're stuck:
 1. Check our [Common Issues](/faqs/common-errors/#gluetun-does-not-connect) page
 2. Visit the [YAMS Forum](https://forum.yams.media)
-3. Join our [Discord](https://discord.gg/Gwae3tNMST) or [Matrix](https://matrix.to/#/#yams-space:rogs.me) chat
+3. Join our [Discord](https://discord.gg/Gwae3tNMST)
 
 Remember: A working VPN is crucial for safe downloading. Take the time to set it up right, and you'll be good to go! 🚀
