@@ -62,7 +62,7 @@ nav = [
 
 # Theme configuration
 [project.theme]
-variant = "modern"
+variant = "classic"
 logo = "pics/logo.png"
 favicon = "favicon.ico"
 custom_dir = "overrides"
