@@ -1,0 +1,6 @@
+/* Custom YAMS color scheme */
+:root > * {
+  --md-primary-fg-color: #5faf63;
+  --md-primary-fg-color--light: #a3d6a6;
+  --md-primary-fg-color--dark: #3d8540;
+}

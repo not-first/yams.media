@@ -4,6 +4,10 @@ site_url = "https://yams.media"
 site_description = "YAMS is a basic but powerful media server installation script"
 site_author = "YAMS Contributors"
 copyright = "&copy; 2025 YAMS Contributors"
+repo_url = "https://gitlab.com/rogs/yams"
+repo_name = "rogs/yams"
+extra_css = ["stylesheets/extra.css"]
+
 
 # Directory configuration
 docs_dir = "docs"
@@ -66,6 +70,20 @@ logo = "pics/logo.png"
 favicon = "favicon.ico"
 custom_dir = "overrides"
 
+# Palette toggle for light mode
+[[project.theme.palette]]
+scheme = "default"
+primary = "custom"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+# Palette toggle for dark mode
+[[project.theme.palette]]
+scheme = "slate"
+primary = "custom"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
 # Enable navigation features
 features = [
   "navigation.instant",
@@ -77,6 +95,3 @@ features = [
   "navigation.top",
   "toc.follow",
 ]
-
-# Additional CSS (if needed later)
-# extra_css = ["stylesheets/extra.css"]
