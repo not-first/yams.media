@@ -1,0 +1,2240 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="YAMS is a basic but powerful media server installation script">
+      
+      
+        <meta name="author" content="YAMS Contributors">
+      
+      
+        <link rel="canonical" href="https://yams.media/config/bazarr/">
+      
+      
+        <link rel="prev" href="../sonarr/">
+      
+      
+        <link rel="next" href="../jellyfin/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="zensical-0.0.23">
+    
+    
+      
+        <title>Bazarr - YAMS - Yet Another Media Server</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.1e989742.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-bazarr" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-header__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YAMS - Yet Another Media Server
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Bazarr
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../install/" class="md-tabs__link">
+          
+  
+  Install
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Configure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/" class="md-tabs__link">
+          
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faqs/" class="md-tabs__link">
+          
+  
+  FAQs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../donate/" class="md-tabs__link">
+        
+  
+  Donate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://forum.yams.media" class="md-tabs__link">
+        
+  
+  Forum
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-tabs__link">
+        
+  
+  Discord
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-tabs__link">
+        
+  
+  Matrix
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-nav__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    YAMS - Yet Another Media Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../install/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is YAMS?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/using-the-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prowlarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prowlarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../qbittorrent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qBittorrent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sabnzbd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SABnzbd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sonarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#almost-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Almost there! 🏃‍♂️
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-become-a-subtitle-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Want to become a subtitle master? 🎓
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jellyfin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jellyfin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../emby/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emby
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../running-everything-together/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running everything together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../advanced/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/torrenting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Torrenting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/wireguard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching Gluetun to WireGuard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/port-forwarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Port Forwarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposing YAMS to the Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/env-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Environment File (.env)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/prowlarr-behind-vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Prowlarr Behind the VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/seeding-with-qbitmanage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seeding With Qbitmanage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/autobrr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autobrr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/lidarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lidarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/proxmox-lxc-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox LXC Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/add-your-own-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding your own containers to YAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faqs/common-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../donate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Donate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://forum.yams.media" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Initial Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#languages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Languages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subtitles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subtitles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-sonarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Sonarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connecting-to-radarr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connecting to Radarr
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#almost-there" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Almost there! 🏃‍♂️
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#want-to-become-a-subtitle-master" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Want to become a subtitle master? 🎓
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Configure
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="what-is-bazarr">What is Bazarr?<a class="headerlink" href="#what-is-bazarr" title="Permanent link">&para;</a></h1>
+<p>From their <a href="https://www.bazarr.media/">website</a>:</p>
+<blockquote>
+<p>Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.</p>
+</blockquote>
+<p>In YAMS, Bazarr is your subtitle superstar! 🌟 It's going to download subtitles in any language you choose, sort them, and put them right where Emby/Jellyfin/Plex can find them. No more hunting for subtitles manually! </p>
+<h2 id="initial-configuration">Initial Configuration<a class="headerlink" href="#initial-configuration" title="Permanent link">&para;</a></h2>
+<p>In your browser, go to <a href="">http://{your-ip-address}:6767/</a> and you'll see Bazarr's settings page.</p>
+<p><a href="../../pics/bazarr-1.png"><img alt="bazarr-1" src="../../pics/bazarr-1.png" /></a></p>
+<p>The default settings here are fine - no need to change anything yet!</p>
+<h3 id="languages">Languages<a class="headerlink" href="#languages" title="Permanent link">&para;</a></h3>
+<p>On the left side menu, click on "Languages". This is where the fun begins! 🎬</p>
+<p>In the "Languages Filter" box, pick all the languages you want subtitles for. For this tutorial, I'm going with:
+- <code>English</code> (because why not?)
+- <code>Spanish</code> (¿por qué no?)
+- <code>Latin American Spanish</code> (different flavor, same great taste!)</p>
+<p>After choosing your languages, click on "Add New Profile"</p>
+<p><a href="../../pics/bazarr-2.png"><img alt="bazarr-2" src="../../pics/bazarr-2.png" /></a></p>
+<p>In the "Edit Languages Profile" modal:
+1. Give your profile a name (anything you want!)
+2. Click on "Add Language"
+3. <strong>Important:</strong> Click "Add Language" once for EACH language you picked earlier!</p>
+<p>Since I picked 3 languages earlier, I need to click "Add Language" three times. Math! 🧮</p>
+<p>When you're done, click "Save" at the bottom.</p>
+<p><a href="../../pics/bazarr-3.png"><img alt="bazarr-3" src="../../pics/bazarr-3.png" /></a></p>
+<p>Back on the "Languages" page, set your new profile as the default for both Series and Movies.</p>
+<p><a href="../../pics/bazarr-4.png"><img alt="bazarr-4" src="../../pics/bazarr-4.png" /></a></p>
+<p>You should end up with something like this:</p>
+<p><a href="../../pics/bazarr-5.png"><img alt="bazarr-5" src="../../pics/bazarr-5.png" /></a></p>
+<p>Happy with how it looks? Hit "Save" at the top of the page!</p>
+<p><a href="../../pics/bazarr-6.png"><img alt="bazarr-6" src="../../pics/bazarr-6.png" /></a></p>
+<h3 id="providers">Providers<a class="headerlink" href="#providers" title="Permanent link">&para;</a></h3>
+<p>Time to tell Bazarr where to find those subtitles! Click on "Providers" in the left menu, then click that big ➕ sign.</p>
+<p><a href="../../pics/bazarr-7.png"><img alt="bazarr-7" src="../../pics/bazarr-7.png" /></a></p>
+<p>You'll see a HUGE list of providers - and they even include descriptions! How thoughtful! 📚</p>
+<p><a href="../../pics/bazarr-8.png"><img alt="bazarr-8" src="../../pics/bazarr-8.png" /></a></p>
+<p>For this tutorial, we'll just add <a href="https://www.opensubtitles.org/en/search/subs">OpenSubtitles.org</a>, but feel free to add more later! The more providers you have, the better chance of finding perfect subtitles.</p>
+<p>Some providers (including OpenSubtitles.org) need a username and password. If you don't have an account yet, go ahead and create one - I'll wait! ⏳</p>
+<p>Got your login info? Great! Enter it and click "Save"</p>
+<p><a href="../../pics/bazarr-9.png"><img alt="bazarr-9" src="../../pics/bazarr-9.png" /></a></p>
+<p>Now you'll see OpenSubtitles.org in your providers list! Click "Save" at the top of the page if you're happy with the changes.</p>
+<p><a href="../../pics/bazarr-10.png"><img alt="bazarr-10" src="../../pics/bazarr-10.png" /></a></p>
+<h3 id="subtitles">Subtitles<a class="headerlink" href="#subtitles" title="Permanent link">&para;</a></h3>
+<p>Click on "Subtitles" in the left menu and scroll down to "Performance / Optimization". </p>
+<p>First thing to do: Disable "Use Embedded Subtitles". We want our subtitles free-range, not caged! 🐓</p>
+<p>A bit further down, you'll find "Post-Processing". Enable these options:
+- "Encode Subtitles to UTF8" (keeps everything readable)
+- "Hearing Impaired" (removes those [DOOR CREAKS] descriptions)
+- "Remove Tags" (cleans up formatting)
+- "OCR Fixes" (fixes common scanning errors)
+- "Common Fixes" (fixes... common stuff! 😅)
+- "Fix Uppercase" (NO MORE SHOUTING IN SUBTITLES)</p>
+<p><a href="../../pics/bazarr-11.png"><img alt="bazarr-11" src="../../pics/bazarr-11.png" /></a></p>
+<p>Now scroll aaaaaall the way to the bottom and enable:
+- "Automatic Subtitles Synchronization"
+- Set both "Series Score Threshold" and "Movies Score Threshold" to 50</p>
+<p>Why 50? I've found it's a good balance - Bazarr can still find good subtitles but won't use terrible ones. Feel free to adjust this if you want to be more or less picky!</p>
+<p><a href="../../pics/bazarr-12.png"><img alt="bazarr-12" src="../../pics/bazarr-12.png" /></a></p>
+<p>Happy with your settings? Hit "Save" at the top!</p>
+<p><a href="../../pics/bazarr-13.png"><img alt="bazarr-13" src="../../pics/bazarr-13.png" /></a></p>
+<h3 id="connecting-to-sonarr">Connecting to Sonarr<a class="headerlink" href="#connecting-to-sonarr" title="Permanent link">&para;</a></h3>
+<p>Time to link Bazarr with <a href="..//config/sonarr">Sonarr</a>! First, we need Sonarr's API key.</p>
+<p>Head to <a href="">http://{your-ip-address}:8989/settings/general</a> and find the API Key under "Security".</p>
+<p><a href="../../pics/bazarr-14.png"><img alt="bazarr-14" src="../../pics/bazarr-14.png" /></a></p>
+<p>Copy that key and keep it safe!</p>
+<p>Back in Bazarr, click on "Sonarr" in the left menu.</p>
+<p>By default, Sonarr is disabled. Let's fix that! Enable Sonarr and you'll see lots of new options. Don't panic - you only need to change a few:</p>
+<ul>
+<li>Address: set to <code>sonarr</code></li>
+<li>API Key: paste in Sonarr's API Key</li>
+<li>Click "Test"</li>
+</ul>
+<p>If everything's working, you'll see your Sonarr version on the button! 🎉</p>
+<p><a href="../../pics/bazarr-15.png"><img alt="bazarr-15" src="../../pics/bazarr-15.png" /></a></p>
+<p>Click "Save" at the top of the page to finish up.</p>
+<p><a href="../../pics/bazarr-16.png"><img alt="bazarr-16" src="../../pics/bazarr-16.png" /></a></p>
+<p>Magic time! The "Series" section should appear in your left menu! ✨</p>
+<p><a href="../../pics/bazarr-19.png"><img alt="bazarr-19" src="../../pics/bazarr-19.png" /></a></p>
+<h3 id="connecting-to-radarr">Connecting to Radarr<a class="headerlink" href="#connecting-to-radarr" title="Permanent link">&para;</a></h3>
+<p>Now let's connect to <a href="..//config/radarr">Radarr</a>! First step: get that API key.</p>
+<p>Go to <a href="">http://{your-ip-address}:7878/settings/general</a> and find the API Key under "Security".</p>
+<p><a href="../../pics/bazarr-17.png"><img alt="bazarr-17" src="../../pics/bazarr-17.png" /></a></p>
+<p>Copy that key and keep it handy!</p>
+<p>Back in Bazarr, click "Radarr" in the left menu.</p>
+<p>Just like with Sonarr, Radarr is disabled by default. Enable it and fill in:
+- Address: set to <code>radarr</code>
+- API Key: paste in Radarr's API Key
+- Click "Test"</p>
+<p>If the test works, you'll see your Radarr version on the button! 🎯</p>
+<p><a href="../../pics/bazarr-18.png"><img alt="bazarr-18" src="../../pics/bazarr-18.png" /></a></p>
+<p>Click "Save" at the top to wrap things up.</p>
+<p><a href="../../pics/bazarr-20.png"><img alt="bazarr-20" src="../../pics/bazarr-20.png" /></a></p>
+<p>More magic! The "Movies" section appears in your left menu! ✨</p>
+<p><a href="../../pics/bazarr-21.png"><img alt="bazarr-21" src="../../pics/bazarr-21.png" /></a></p>
+<h3 id="almost-there">Almost there! 🏃‍♂️<a class="headerlink" href="#almost-there" title="Permanent link">&para;</a></h3>
+<p>Just one last step! Time to set up your media service. Pick your path:
+- <a href="..//config/jellyfin">Jellyfin</a>
+- <a href="..//config/emby">Emby</a>
+- <a href="..//config/plex">Plex</a></p>
+<h2 id="want-to-become-a-subtitle-master">Want to become a subtitle master? 🎓<a class="headerlink" href="#want-to-become-a-subtitle-master" title="Permanent link">&para;</a></h2>
+<p>If you want to really dive into Bazarr's settings, check out the <a href="https://trash-guides.info/Bazarr/">TRaSH Guide for Bazarr</a>. They've got some amazing advanced configurations in there!</p>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Custom footer content -->
+      <div class="md-footer-custom">
+        <ul
+          style="list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/yams-small.png" style="height: 20px;" alt="YAMS" />
+            <a href="https://yams.media">yams.media</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitea-small.png" style="height: 20px;" alt="Gitea" />
+            <a href="https://git.rogs.me/rogs/yams">git.rogs.me/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitlab-small.png" style="height: 20px;" alt="GitLab" />
+            <a href="https://gitlab.com/rogs/yams">gitlab.com/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/github-small.png" style="height: 20px;" alt="GitHub" />
+            <a href="https://github.com/rogsme/yams">github.com/rogsme/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/discord-small.png" style="height: 20px;" alt="Discord" />
+            <a href="https://discord.gg/Gwae3tNMST">Discord</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/element-small.png" style="height: 20px;" alt="Matrix" />
+            <a href="https://matrix.to/#/#yams-space:rogs.me">#yams-space:rogs.me</a>
+          </li>
+          
+          <li>
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=https%3A//yams.media/config/bazarr/&right_color=%235FAF63"
+              alt="visitor badge" style="height: 20px;" />
+          </li>
+          
+          <li>
+            <a href="https://www.buymeacoffee.com/rogs">🍕 Support YAMS! 🤑</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Include the default footer copyright -->
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 YAMS Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.prefetch","navigation.tabs","navigation.sections","navigation.indexes","navigation.path","navigation.top","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5fcf0de6.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2732 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="YAMS is a basic but powerful media server installation script">
+      
+      
+        <meta name="author" content="YAMS Contributors">
+      
+      
+        <link rel="canonical" href="https://yams.media/install/steps/">
+      
+      
+        <link rel="prev" href="../description/">
+      
+      
+        <link rel="next" href="../using-the-cli/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="zensical-0.0.23">
+    
+    
+      
+        <title>Installation - YAMS - Yet Another Media Server</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.1e989742.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-header__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YAMS - Yet Another Media Server
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Install
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../config/" class="md-tabs__link">
+          
+  
+  Configure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../advanced/" class="md-tabs__link">
+          
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faqs/" class="md-tabs__link">
+          
+  
+  FAQs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../donate/" class="md-tabs__link">
+        
+  
+  Donate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://forum.yams.media" class="md-tabs__link">
+        
+  
+  Forum
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-tabs__link">
+        
+  
+  Discord
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-tabs__link">
+        
+  
+  Matrix
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-nav__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    YAMS - Yet Another Media Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is YAMS?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS Users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-installation-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Installation Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Installation Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setup-your-install-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Setup your install location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setup-your-media-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Setup your media directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-if-you-already-have-docker-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. If you already have docker installed...
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-get-yams-on-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Get YAMS on your system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-start-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Start the installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-docker-installation-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Docker Installation (if needed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-choose-installation-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Choose Installation Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-select-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Select User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-set-media-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Set Media Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-choose-media-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Choose Media Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-vpn-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. VPN Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Installation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-final-success-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Final Success Screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Next?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../using-the-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../config/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/prowlarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prowlarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/qbittorrent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qBittorrent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/sabnzbd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SABnzbd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/radarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/sonarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/bazarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/jellyfin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jellyfin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/plex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/emby/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emby
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/running-everything-together/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running everything together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../advanced/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/torrenting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Torrenting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/wireguard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching Gluetun to WireGuard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/port-forwarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Port Forwarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposing YAMS to the Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/env-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Environment File (.env)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/prowlarr-behind-vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Prowlarr Behind the VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/seeding-with-qbitmanage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seeding With Qbitmanage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/autobrr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autobrr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/lidarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lidarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/proxmox-lxc-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox LXC Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../advanced/add-your-own-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding your own containers to YAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faqs/common-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../donate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Donate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://forum.yams.media" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#macos-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS Users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-installation-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pre-Installation Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Installation Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-setup-your-install-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Setup your install location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-setup-your-media-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Setup your media directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-if-you-already-have-docker-installed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. If you already have docker installed...
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4-get-yams-on-your-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Get YAMS on your system
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-start-the-installer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Start the installer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-docker-installation-if-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Docker Installation (if needed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-choose-installation-location" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Choose Installation Location
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-select-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Select User
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-set-media-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Set Media Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-choose-media-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Choose Media Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-vpn-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. VPN Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-installation-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Installation Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-final-success-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Final Success Screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What's Next?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Install
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <h1>Installation</h1>
+
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<p>YAMS only needs a few things to get started:</p>
+<ul>
+<li>Debian 13 (recommended) or Ubuntu 24.04 running on bare metal, a VM, or certain container types. If your OS isn't ready yet, check out these guides:</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-11">https://www.digitalocean.com/community/tutorials/initial-server-setup-with-debian-11</a> (this tutorial is for Debian 11, but it should be the same).</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04">https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-22-04</a> (this tutorial is for Ubuntu 22.04, but is should be the same).</li>
+<li>Your OS needs to be properly configured. That means:</li>
+<li>You have a user that is not <code>root</code> (because we're responsible adults 😎)</li>
+<li>You can run <code>sudo apt update</code> and <code>sudo apt upgrade</code> without errors</li>
+<li>
+<p>If you're using Ubuntu, <strong>make sure you are NOT using the snap version of docker!</strong> The snap version runs in a sandbox and can't access what it needs. You can check by running <code>which docker</code>. If you see:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$ which docker
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>/snap/bin/docker
+</span></code></pre></div>
+  You <strong>won't</strong> be able to install YAMS. ⚠️</p>
+</li>
+<li>
+<p><strong>Proxmox LXC Users:</strong> YAMS can be installed within an unprivileged Proxmox LXC container, but this requires specific configuration on the Proxmox host <strong>before</strong> you run the YAMS installation script inside the container. Please follow the steps in our <a href="..//advanced/proxmox-lxc-prerequisites/">Proxmox LXC Prerequisites guide</a> before proceeding with the installation steps below.</p>
+</li>
+</ul>
+<p>Don't worry if you don't have <code>docker</code> and <code>docker-compose</code> installed - the script can handle that for you on Debian and Ubuntu!</p>
+<h2 id="macos-users">macOS Users<a class="headerlink" href="#macos-users" title="Permanent link">&para;</a></h2>
+<p>If you're looking to install YAMS on macOS, you're in luck! A community-maintained fork is available, specifically tailored for macOS.</p>
+<p>Please visit <a href="https://gitlab.com/zavan/yams">zavan/yams on GitLab</a> to access the fork and follow their installation instructions.</p>
+<p><strong>Disclaimer:</strong> This is a community-maintained project and is not officially supported by the YAMS team. For any issues or questions related to the macOS fork, please use the fork's issue tracker.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Before we dive in, make sure you have:</p>
+<ul>
+<li>
+<p><strong>Git installed:</strong> You'll need this to clone the YAMS repository. Check if it's installed with:
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>--version
+</span></code></pre></div>
+  If you don't have it yet, it's easy to install:
+  <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># For Debian/Ubuntu</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>git
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>An installation location:</strong> The script defaults to <code>/opt/yams</code> but hey, you do you! Just make sure your user can write to wherever you choose.</p>
+</li>
+<li><strong>A media folder:</strong> This is where all your stuff will live. For example, if you pick <code>/srv/media</code>, the script will create:</li>
+<li><code>/srv/media/tvshows</code>: For your TV shows</li>
+<li><code>/srv/media/movies</code>: For your movies</li>
+<li><code>/srv/media/music</code>: For your tunes</li>
+<li><code>/srv/media/books</code>: For your books</li>
+<li><code>/srv/media/downloads</code>: For your downloads</li>
+<li><code>/srv/media/blackhole</code>: For your torrent blackhole</li>
+<li><strong>A regular user to run and own the media files:</strong> Don't use <code>root</code> (I mean, I can't stop you, but come on! 😅)</li>
+<li><strong>A VPN service (optional but STRONGLY recommended):</strong> Choose one from <a href="..//advanced/vpn#official-supported-vpns">this list</a>. I always recommend <a href="https://protonvpn.com/">ProtonVPN</a> because it's super easy to set up!</li>
+</ul>
+<h2 id="pre-installation-setup">Pre-Installation Setup<a class="headerlink" href="#pre-installation-setup" title="Permanent link">&para;</a></h2>
+<h3 id="1-setup-your-install-location">1. Setup your install location<a class="headerlink" href="#1-setup-your-install-location" title="Permanent link">&para;</a></h3>
+<p>The <code>/opt/yams</code> location is <strong>recommended</strong>, but you can be a rebel and use whatever you like if your user has permissions:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/opt/yams
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/opt/yams
+</span></code></pre></div>
+<h3 id="2-setup-your-media-directory">2. Setup your media directory<a class="headerlink" href="#2-setup-your-media-directory" title="Permanent link">&para;</a></h3>
+<p>If your media directory doesn't exist yet, you'll need to create it and set the correct permissions. For example, if you're using <code>/srv/media</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/srv/media
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span><span class="nv">$USER</span>:<span class="nv">$USER</span><span class="w"> </span>/srv/media
+</span></code></pre></div>
+<p><strong>Important notes:</strong>
+- Make sure your user has full read/write permissions to this directory
+- If you're using an external drive or NFS/SMB mount, mount it first, then set permissions
+- The installer will create subdirectories (tvshows, movies, music, etc.) automatically
+- Don't use <code>root</code> as the owner, use your regular user account!</p>
+<h3 id="3-if-you-already-have-docker-installed">3. If you already have docker installed...<a class="headerlink" href="#3-if-you-already-have-docker-installed" title="Permanent link">&para;</a></h3>
+<p>Make sure you can run <code>docker</code> <strong>without</strong> <code>sudo</code>! Try this:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>run<span class="w"> </span>hello-world
+</span></code></pre></div>
+<p>If it fails, you might need to add your user to the docker group. Follow <a href="https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user">Docker's post-installation steps</a> or check our <a href="..//faqs/common-errors/#common-docker-permission-errors">Common docker permission errors</a> page.</p>
+<h2 id="installation-steps">Installation Steps<a class="headerlink" href="#installation-steps" title="Permanent link">&para;</a></h2>
+<h3 id="4-get-yams-on-your-system">4. Get YAMS on your system<a class="headerlink" href="#4-get-yams-on-your-system" title="Permanent link">&para;</a></h3>
+<p>First, let's grab a fresh copy of YAMS and put it in a temporary location (we like to keep things tidy!):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://gitlab.com/rogs/yams.git<span class="w"> </span>/tmp/yams
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">cd</span><span class="w"> </span>/tmp/yams
+</span></code></pre></div>
+<h3 id="5-start-the-installer">5. Start the installer<a class="headerlink" href="#5-start-the-installer" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>bash<span class="w"> </span>install.sh
+</span></code></pre></div>
+<p>You'll see this welcome screen:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">====================================================</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">                 </span>___<span class="w">           </span>___<span class="w">           </span>___
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">     </span>___<span class="w">        </span>/<span class="w">  </span>/<span class="se">\ </span><span class="w">        </span>/__/<span class="se">\ </span><span class="w">        </span>/<span class="w">  </span>/<span class="se">\</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span>/__/<span class="p">|</span><span class="w">      </span>/<span class="w">  </span>/::<span class="se">\ </span><span class="w">      </span><span class="p">|</span><span class="w">  </span><span class="p">|</span>::<span class="se">\ </span><span class="w">      </span>/<span class="w">  </span>/:/_
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">   </span><span class="p">|</span><span class="w">  </span><span class="p">|</span>:<span class="p">|</span><span class="w">     </span>/<span class="w">  </span>/:/<span class="se">\:\ </span><span class="w">     </span><span class="p">|</span><span class="w">  </span><span class="p">|</span>:<span class="p">|</span>:<span class="se">\ </span><span class="w">    </span>/<span class="w">  </span>/:/<span class="w"> </span>/<span class="se">\</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">   </span><span class="p">|</span><span class="w">  </span><span class="p">|</span>:<span class="p">|</span><span class="w">    </span>/<span class="w">  </span>/:/~/::<span class="se">\ </span><span class="w">  </span>__<span class="p">|</span>__<span class="p">|</span>:<span class="p">|</span><span class="se">\:\ </span><span class="w">  </span>/<span class="w">  </span>/:/<span class="w"> </span>/::<span class="se">\</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w"> </span>__<span class="p">|</span>__<span class="p">|</span>:<span class="p">|</span><span class="w">   </span>/__/:/<span class="w"> </span>/:/<span class="se">\:\ </span>/__/::::<span class="p">|</span><span class="w"> </span><span class="se">\:\ </span>/__/:/<span class="w"> </span>/:/<span class="se">\:\</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>/__/::::<span class="se">\ </span><span class="w">  </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/__<span class="se">\/</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\~</span>~<span class="se">\_</span>_<span class="se">\/</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/~/:/
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">   </span>~<span class="se">\~</span>~<span class="se">\:\ </span><span class="w">  </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/<span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/<span class="w"> </span>/:/
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">     </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">  </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\_</span>_<span class="se">\/</span><span class="w"> </span>/:/
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">      </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">    </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">        </span>/__/:/
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">                </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">         </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">         </span><span class="se">\_</span>_<span class="se">\/</span>
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="o">====================================================</span>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Welcome<span class="w"> </span>to<span class="w"> </span>YAMS<span class="w"> </span><span class="o">(</span>Yet<span class="w"> </span>Another<span class="w"> </span>Media<span class="w"> </span>Server<span class="o">)</span>
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Installation<span class="w"> </span>process<span class="w"> </span>should<span class="w"> </span>be<span class="w"> </span>really<span class="w"> </span>quick
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>We<span class="w"> </span>just<span class="w"> </span>need<span class="w"> </span>you<span class="w"> </span>to<span class="w"> </span>answer<span class="w"> </span>some<span class="w"> </span><span class="nv">questions</span>
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="o">====================================================</span>
+</span></code></pre></div></p>
+<h3 id="6-docker-installation-if-needed">6. Docker Installation (if needed)<a class="headerlink" href="#6-docker-installation-if-needed" title="Permanent link">&para;</a></h3>
+<p>The installer will first check for Docker:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Checking<span class="w"> </span>prerequisites...
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>⚠️<span class="w"> </span>Docker<span class="w"> </span>not<span class="w"> </span>found!<span class="w"> </span>⚠️
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Do<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>YAMS<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>docker<span class="w"> </span>and<span class="w"> </span>docker-compose?<span class="w"> </span>IT<span class="w"> </span>ONLY<span class="w"> </span>WORKS<span class="w"> </span>ON<span class="w"> </span>DEBIAN<span class="w"> </span>AND<span class="w"> </span>UBUNTU!<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>y
+</span></code></pre></div></p>
+<ul>
+<li>If you don't have Docker installed:</li>
+<li>Type <code>y</code> and press Enter to let YAMS handle the Docker installation</li>
+<li>The script will install both Docker and Docker Compose</li>
+<li>
+<p>This only works on Debian and Ubuntu!</p>
+</li>
+<li>
+<p>If you already have Docker:</p>
+</li>
+<li>You'll see "docker exists ✅" instead</li>
+<li>The installer will move to the next step</li>
+</ul>
+<h3 id="7-choose-installation-location">7. Choose Installation Location<a class="headerlink" href="#7-choose-installation-location" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Where<span class="w"> </span><span class="k">do</span><span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>docker-compose<span class="w"> </span>file?<span class="w"> </span><span class="o">[</span>/opt/yams<span class="o">]</span>:
+</span></code></pre></div>
+<ul>
+<li>Press Enter to use the default <code>/opt/yams</code> (recommended) or type a different path if you want to install somewhere else</li>
+<li>Make sure your user has write permissions to this location!</li>
+<li><strong>Important</strong>: You must use an absolute path (e.g., <code>/mnt/yams</code>). Docker does not expand <code>~</code> to your home directory, so avoid using something like <code>~/yams</code></li>
+</ul>
+<h3 id="8-select-user">8. Select User<a class="headerlink" href="#8-select-user" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>What<span class="err">&#39;</span>s<span class="w"> </span>the<span class="w"> </span>user<span class="w"> </span>that<span class="w"> </span>is<span class="w"> </span>going<span class="w"> </span>to<span class="w"> </span>own<span class="w"> </span>the<span class="w"> </span>media<span class="w"> </span>server<span class="w"> </span>files?<span class="w"> </span><span class="o">[</span>your_current_user<span class="o">]</span>:
+</span></code></pre></div>
+<ul>
+<li>Press Enter to use your current user (recommended) or type a different username</li>
+<li>Remember: Don't use <code>root</code>!</li>
+<li>The user must exist and have sudo privileges</li>
+</ul>
+<h3 id="9-set-media-directory">9. Set Media Directory<a class="headerlink" href="#9-set-media-directory" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Please,<span class="w"> </span>input<span class="w"> </span>your<span class="w"> </span>media<span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>/srv/media<span class="o">]</span>:
+</span></code></pre></div>
+<ul>
+<li>Press Enter to use the default <code>/srv/media</code> or type the path where you want your media stored. This path can also be a SMB/NFS mount in your host OS</li>
+<li>This can be an external drive or different partition</li>
+<li><strong>Important</strong>: You must use an absolute path (e.g., <code>/mnt/media</code>). Docker does not expand <code>~</code> to your home directory, so avoid using something like <code>~/media</code></li>
+<li><strong>Make sure this directory exists and your user has permissions!</strong> See step 2 above if you haven't created it yet</li>
+</ul>
+<p>Then confirm your choice:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Are<span class="w"> </span>you<span class="w"> </span>sure<span class="w"> </span>your<span class="w"> </span>media<span class="w"> </span>directory<span class="w"> </span>is<span class="w"> </span><span class="s2">&quot;/srv/media&quot;</span>?<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:
+</span></code></pre></div></p>
+<ul>
+<li>Type <code>y</code> and press Enter if the path is correct</li>
+<li>Type <code>n</code> or press Enter to go back and change it</li>
+</ul>
+<h3 id="10-choose-media-service">10. Choose Media Service<a class="headerlink" href="#10-choose-media-service" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Time<span class="w"> </span>to<span class="w"> </span>choose<span class="w"> </span>your<span class="w"> </span>media<span class="w"> </span>service.
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>Your<span class="w"> </span>media<span class="w"> </span>service<span class="w"> </span>is<span class="w"> </span>responsible<span class="w"> </span><span class="k">for</span><span class="w"> </span>serving<span class="w"> </span>your<span class="w"> </span>files<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>network.
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Supported<span class="w"> </span>media<span class="w"> </span>services:
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>-<span class="w"> </span>jellyfin<span class="w"> </span><span class="o">(</span>recommended,<span class="w"> </span>easier<span class="o">)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>-<span class="w"> </span>emby
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>-<span class="w"> </span>plex<span class="w"> </span><span class="o">(</span>advanced,<span class="w"> </span>always<span class="w"> </span>online<span class="o">)</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Choose<span class="w"> </span>your<span class="w"> </span>media<span class="w"> </span>service<span class="w"> </span><span class="o">[</span>jellyfin<span class="o">]</span>:
+</span></code></pre></div>
+<p>Pick your streaming service:
+- Press Enter for Jellyfin (recommended for beginners)
+- Type <code>emby</code> for Emby
+- Type <code>plex</code> for Plex</p>
+<p>Each service has its strengths:
+- <strong>Jellyfin</strong>: Free, open-source, easy to set up
+- <strong>Emby</strong>: Similar to Jellyfin but with premium features
+- <strong>Plex</strong>: Most polished, but requires online account and is more complex to configure. Be aware of these <a href="https://www.plex.tv/blog/important-2025-plex-updates/">new limitations</a> if you don't have a Plex Pass</p>
+<h3 id="11-vpn-configuration">11. VPN Configuration<a class="headerlink" href="#11-vpn-configuration" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Time<span class="w"> </span>to<span class="w"> </span><span class="nb">set</span><span class="w"> </span>up<span class="w"> </span>the<span class="w"> </span>VPN.
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Supported<span class="w"> </span>VPN<span class="w"> </span>providers:<span class="w"> </span>https://yams.media/advanced/vpn
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Configure<span class="w"> </span>VPN?<span class="w"> </span><span class="o">(</span>Y/n<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">Default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>y<span class="o">]</span>:
+</span></code></pre></div>
+<p>If you want to use a VPN (strongly recommended):
+1. Press Enter or type <code>y</code> to configure VPN
+2. Enter your VPN provider:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>VPN<span class="w"> </span>service?<span class="w"> </span><span class="o">(</span>with<span class="w"> </span>spaces<span class="o">)</span><span class="w"> </span><span class="o">[</span>protonvpn<span class="o">]</span>:
+</span></code></pre></div>
+   - Press Enter for ProtonVPN (recommended)
+   - Or type your VPN provider's name</p>
+<p>The installer will show you where to find the setup documentation:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Please<span class="w"> </span>check<span class="w"> </span>protonvpn<span class="err">&#39;</span>s<span class="w"> </span>documentation<span class="w"> </span><span class="k">for</span><span class="w"> </span>specific<span class="w"> </span>configuration:
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md
+</span></code></pre></div>
+   Make sure to check this documentation - it will help you avoid common setup issues!</p>
+<p>If you are using ProtonVPN:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>DO<span class="w"> </span>NOT<span class="w"> </span>USE<span class="w"> </span>YOUR<span class="w"> </span>PROTON<span class="w"> </span>ACCOUNT<span class="w"> </span>USERNAME<span class="w"> </span>AND<span class="w"> </span>PASSWORD.<span class="w"> </span>REFER<span class="w"> </span>TO<span class="w"> </span>THE<span class="w"> </span>DOCUMENTATION<span class="w"> </span>ABOVE<span class="w"> </span>TO<span class="w"> </span>OBTAIN<span class="w"> </span>THE<span class="w"> </span>CORRECT<span class="w"> </span>VPN<span class="w"> </span>USERNAME<span class="w"> </span>AND<span class="w"> </span>PASSWORD.
+</span></code></pre></div>
+   <a href="https://github.com/qdm12/gluetun-wiki/blob/main/setup/providers/protonvpn.md#openvpn-only">Don't say you weren't warned</a>.</p>
+<p>The installer will then ask:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Are<span class="w"> </span>you<span class="w"> </span>using<span class="w"> </span>a<span class="w"> </span>free<span class="w"> </span>ProtonVPN<span class="w"> </span>account?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">Default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n<span class="o">]</span>:
+</span></code></pre></div>
+   - If you type <code>y</code> and press Enter:
+     <div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>⚠️<span class="w"> </span>ProtonVPN<span class="w"> </span>Free<span class="w"> </span>Tier<span class="w"> </span>Users:<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>plan<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>a<span class="w"> </span>free<span class="w"> </span>ProtonVPN<span class="w"> </span>account,<span class="w"> </span>please<span class="w"> </span>be<span class="w"> </span>aware<span class="w"> </span>that<span class="w"> </span>port<span class="w"> </span>forwarding<span class="w"> </span>is<span class="w"> </span>not<span class="w"> </span>supported.<span class="w"> </span>See<span class="w"> </span>our<span class="w"> </span>ProtonVPN<span class="w"> </span>Free<span class="w"> </span>Tier<span class="w"> </span>guide<span class="w"> </span>here:<span class="w"> </span>https://yams.media/advanced/vpn/#protonvpn-free-tier<span class="w"> </span><span class="k">for</span><span class="w"> </span>more<span class="w"> </span>details.
+</span></code></pre></div>
+     The installer will automatically configure Gluetun for the free tier (setting <code>FREE_ONLY=on</code> and disabling port forwarding). You will <strong>not</strong> need to make manual changes to <code>docker-compose.yaml</code> or <code>.env</code> for this.
+   - If you type <code>n</code> or press Enter (for a paid account):
+     The installer will proceed to the general port forwarding question.</p>
+<p>If you are using Mullvad:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Mullvad<span class="w"> </span>is<span class="w"> </span>removing<span class="w"> </span>OpenVPN<span class="w"> </span>support<span class="w"> </span>on<span class="w"> </span>January<span class="w"> </span><span class="m">15</span>,<span class="w"> </span><span class="m">2026</span>.
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>If<span class="w"> </span>you<span class="w"> </span>plan<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>Mullvad,<span class="w"> </span>you<span class="w"> </span>MUST<span class="w"> </span>migrate<span class="w"> </span>to<span class="w"> </span>WireGuard<span class="w"> </span>after<span class="w"> </span>installation.
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Read<span class="w"> </span>more:<span class="w"> </span>https://mullvad.net/en/blog/removing-openvpn-15th-january-2026
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>WireGuard<span class="w"> </span>setup<span class="w"> </span>instructions:<span class="w"> </span>https://yams.media/advanced/wireguard/
+</span></code></pre></div></p>
+<p>Make sure you configure Wireguard <strong>after</strong> finishing the installation.</p>
+<ol>
+<li>
+<p>Configure port forwarding:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Port<span class="w"> </span>forwarding<span class="w"> </span>allows<span class="w"> </span><span class="k">for</span><span class="w"> </span>better<span class="w"> </span>connectivity<span class="w"> </span><span class="k">in</span><span class="w"> </span>certain<span class="w"> </span>applications.
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>However,<span class="w"> </span>not<span class="w"> </span>all<span class="w"> </span>VPN<span class="w"> </span>providers<span class="w"> </span>support<span class="w"> </span>this<span class="w"> </span>feature.
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Please<span class="w"> </span>check<span class="w"> </span>your<span class="w"> </span>VPN<span class="w"> </span>provider<span class="err">&#39;</span>s<span class="w"> </span>documentation<span class="w"> </span>to<span class="w"> </span>see<span class="w"> </span><span class="k">if</span><span class="w"> </span>they<span class="w"> </span>support<span class="w"> </span>port<span class="w"> </span>forwarding.
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>Enable<span class="w"> </span>port<span class="w"> </span>forwarding?<span class="w"> </span><span class="o">(</span>y/N<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="nv">Default</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>n<span class="o">]</span>:
+</span></code></pre></div></p>
+</li>
+<li>
+<p>Enter your credentials:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>VPN<span class="w"> </span>username<span class="w"> </span><span class="o">(</span>without<span class="w"> </span>spaces<span class="o">)</span>:
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>VPN<span class="w"> </span>password:
+</span></code></pre></div></p>
+</li>
+</ol>
+<p>Special notes:
+- For ProtonVPN, the installer handles the <code>+pmp</code> suffix for port forwarding automatically if you enabled it in the previous step. Just enter your VPN username.
+- For Mullvad, it will only ask you for your username, since Mullvad doesn't need a password.
+- For other VPN providers, the installer will prompt you about port forwarding before asking for credentials.</p>
+<p>If you don't want to configure VPN now:
+- Type <code>n</code> and press Enter
+- You can set it up later, but <strong>always use a VPN when downloading torrents!</strong></p>
+<h3 id="12-installation-process">12. Installation Process<a class="headerlink" href="#12-installation-process" title="Permanent link">&para;</a></h3>
+<p>After you've answered all the questions, you'll see:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Copying<span class="w"> </span>docker-compose.example.yaml<span class="w"> </span>to<span class="w"> </span>/opt/yams/docker-compose.yaml...
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>docker-compose.example.yaml<span class="w"> </span>was<span class="w"> </span>copied<span class="w"> </span>successfuly!<span class="w"> </span>✅
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>Copying<span class="w"> </span>.env.example<span class="w"> </span>to<span class="w"> </span>/opt/yams/.env...
+</span><span id="__span-24-5"><a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>.env.example<span class="w"> </span>was<span class="w"> </span>copied<span class="w"> </span>successfuly!<span class="w"> </span>✅
+</span><span id="__span-24-6"><a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
+</span><span id="__span-24-7"><a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>Copying<span class="w"> </span>docker-compose.custom.yaml<span class="w"> </span>to<span class="w"> </span>/opt/yams/docker-compose.custom.yaml...
+</span><span id="__span-24-8"><a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>docker-compose.custom.yaml<span class="w"> </span>was<span class="w"> </span>copied<span class="w"> </span>successfuly!<span class="w"> </span>✅
+</span><span id="__span-24-9"><a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>Everything<span class="w"> </span>installed<span class="w"> </span>correctly!<span class="w"> </span>🎉
+</span><span id="__span-24-10"><a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>Running<span class="w"> </span>the<span class="w"> </span>server...
+</span><span id="__span-24-11"><a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>This<span class="w"> </span>is<span class="w"> </span>going<span class="w"> </span>to<span class="w"> </span>take<span class="w"> </span>a<span class="w"> </span><span class="k">while</span>...
+</span></code></pre></div></p>
+<p>The installer will now:
+1. Copy all necessary configuration files
+2. Set up your chosen options
+3. Start downloading and configuring Docker containers</p>
+<p>You'll then see:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>We<span class="w"> </span>need<span class="w"> </span>your<span class="w"> </span>sudo<span class="w"> </span>password<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>the<span class="w"> </span>YAMS<span class="w"> </span>CLI<span class="w"> </span>and<span class="w"> </span>configure<span class="w"> </span>permissions...
+</span></code></pre></div></p>
+<p>Enter your sudo password to:
+- Install the YAMS command-line tool
+- Set proper permissions on your media folders</p>
+<p>If everything works, you'll see these success messages:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>YAMS<span class="w"> </span>CLI<span class="w"> </span>installed<span class="w"> </span>successfully<span class="w"> </span>✅
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>Media<span class="w"> </span>directory<span class="w"> </span>ownership<span class="w"> </span>and<span class="w"> </span>permissions<span class="w"> </span><span class="nb">set</span><span class="w"> </span>successfully<span class="w"> </span>✅
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Install<span class="w"> </span>directory<span class="w"> </span>ownership<span class="w"> </span>and<span class="w"> </span>permissions<span class="w"> </span><span class="nb">set</span><span class="w"> </span>successfully<span class="w"> </span>✅
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>Configuration<span class="w"> </span>folder<span class="w"> </span><span class="s2">&quot;/opt/yams/config&quot;</span><span class="w"> </span>exists<span class="w"> </span>✅
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>Configuration<span class="w"> </span>folder<span class="w"> </span>ownership<span class="w"> </span>and<span class="w"> </span>permissions<span class="w"> </span><span class="nb">set</span><span class="w"> </span>successfully<span class="w"> </span>✅
+</span></code></pre></div></p>
+<h3 id="13-final-success-screen">13. Final Success Screen<a class="headerlink" href="#13-final-success-screen" title="Permanent link">&para;</a></h3>
+<p>When everything's done, you'll see this awesome ASCII art:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="o">========================================================</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">     </span>_____<span class="w">          </span>___<span class="w">           </span>___<span class="w">           </span>___
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span>/<span class="w">  </span>/::<span class="se">\ </span><span class="w">       </span>/<span class="w">  </span>/<span class="se">\ </span><span class="w">        </span>/__/<span class="se">\ </span><span class="w">        </span>/<span class="w">  </span>/<span class="se">\</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">   </span>/<span class="w">  </span>/:/<span class="se">\:\ </span><span class="w">     </span>/<span class="w">  </span>/::<span class="se">\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">      </span>/<span class="w">  </span>/:/_
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span>/<span class="w">  </span>/:/<span class="w">  </span><span class="se">\:\ </span><span class="w">   </span>/<span class="w">  </span>/:/<span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">    </span>/<span class="w">  </span>/:/<span class="w"> </span>/<span class="se">\</span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w"> </span>/__/:/<span class="w"> </span><span class="se">\_</span>_<span class="se">\:</span><span class="p">|</span><span class="w">  </span>/<span class="w">  </span>/:/<span class="w">  </span><span class="se">\:\ </span><span class="w">  </span>_____<span class="se">\_</span>_<span class="se">\:\ </span><span class="w">  </span>/<span class="w">  </span>/:/<span class="w"> </span>/:/_
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span>/<span class="w">  </span>/:/<span class="w"> </span>/__/:/<span class="w"> </span><span class="se">\_</span>_<span class="se">\:\ </span>/__/::::::::<span class="se">\ </span>/__/:/<span class="w"> </span>/:/<span class="w"> </span>/<span class="se">\</span>
+</span><span id="__span-27-8"><a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="w">  </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w"> </span>/:/<span class="w">  </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span>/<span class="w">  </span>/:/<span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\~</span>~<span class="se">\~</span>~<span class="se">\/</span><span class="w"> </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/<span class="w"> </span>/:/
+</span><span id="__span-27-9"><a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="w">   </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/<span class="w">    </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w"> </span>/:/<span class="w">   </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w"> </span>~~~<span class="w">   </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/<span class="w"> </span>/:/
+</span><span id="__span-27-10"><a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="w">    </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/<span class="w">      </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/<span class="w">     </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\/</span>:/
+</span><span id="__span-27-11"><a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="w">     </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">        </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/<span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:\ </span><span class="w">       </span><span class="se">\ </span><span class="w"> </span><span class="se">\:</span>:/
+</span><span id="__span-27-12"><a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a><span class="w">                   </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">         </span><span class="se">\_</span>_<span class="se">\/</span><span class="w">         </span><span class="se">\_</span>_<span class="se">\/</span>
+</span><span id="__span-27-13"><a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="o">========================================================</span>
+</span></code></pre></div></p>
+<p>Following this, you'll get a list of all your service URLs:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Service<span class="w"> </span>URLs:
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>qBittorrent:<span class="w"> </span>http://your.ip.address:8081/
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>SABnzbd:<span class="w"> </span>http://your.ip.address:8080/
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>Radarr:<span class="w"> </span>http://your.ip.address:7878/
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>Sonarr:<span class="w"> </span>http://your.ip.address:8989/
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>Lidarr:<span class="w"> </span>http://your.ip.address:8686/
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>Prowlarr:<span class="w"> </span>http://your.ip.address:9696/
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>Bazarr:<span class="w"> </span>http://your.ip.address:6767/
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>Media<span class="w"> </span>Service:<span class="w"> </span>http://your.ip.address:8096/
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>Portainer:<span class="w"> </span>http://your.ip.address:9000/
+</span></code></pre></div></p>
+<p>Don't worry about memorizing these - they're saved in <code>~/yams_services.txt</code> for easy reference!</p>
+<h3 id="important-notes">Important Notes:<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>First Start Time</strong></li>
+<li>Services might take a few minutes to fully start</li>
+<li>
+<p>Be patient on first launch!</p>
+</li>
+<li>
+<p><strong>VPN Check</strong>
+   If you configured a VPN, verify it's working:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>yams<span class="w"> </span>check-vpn
+</span></code></pre></div>
+   You should see different IPs for your system and qBittorrent.</p>
+</li>
+</ol>
+<h2 id="whats-next">What's Next?<a class="headerlink" href="#whats-next" title="Permanent link">&para;</a></h2>
+<p>Time to configure your new media server! Head over to <a href="..//config">Configuration</a> and follow these guides in order:
+1. <a href="..//config/qbittorrent">qBittorrent</a>
+2. <a href="..//config/sabnzbd">SABnzbd</a>
+3. <a href="..//config/radarr">Radarr</a>
+4. <a href="..//config/sonarr">Sonarr</a>
+5. <a href="..//config/prowlarr">Prowlarr</a>
+6. <a href="..//config/bazarr">Bazarr</a>
+7. Your chosen media service:
+   - <a href="..//config/jellyfin">Jellyfin</a>
+   - <a href="..//config/emby">Emby</a>
+   - <a href="..//config/plex">Plex</a></p>
+<p>Need help? We've got your back!
+- Check our <a href="..//faqs/common-errors/">Common Issues</a> page
+- Visit the <a href="https://forum.yams.media">YAMS Forum</a>
+- Join our <a href="https://discord.gg/Gwae3tNMST">Discord</a> or <a href="https://matrix.to/#/#yams-space:rogs.me">Matrix</a> chat</p>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Custom footer content -->
+      <div class="md-footer-custom">
+        <ul
+          style="list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/yams-small.png" style="height: 20px;" alt="YAMS" />
+            <a href="https://yams.media">yams.media</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitea-small.png" style="height: 20px;" alt="Gitea" />
+            <a href="https://git.rogs.me/rogs/yams">git.rogs.me/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitlab-small.png" style="height: 20px;" alt="GitLab" />
+            <a href="https://gitlab.com/rogs/yams">gitlab.com/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/github-small.png" style="height: 20px;" alt="GitHub" />
+            <a href="https://github.com/rogsme/yams">github.com/rogsme/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/discord-small.png" style="height: 20px;" alt="Discord" />
+            <a href="https://discord.gg/Gwae3tNMST">Discord</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/element-small.png" style="height: 20px;" alt="Matrix" />
+            <a href="https://matrix.to/#/#yams-space:rogs.me">#yams-space:rogs.me</a>
+          </li>
+          
+          <li>
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=https%3A//yams.media/install/steps/&right_color=%235FAF63"
+              alt="visitor badge" style="height: 20px;" />
+          </li>
+          
+          <li>
+            <a href="https://www.buymeacoffee.com/rogs">🍕 Support YAMS! 🤑</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Include the default footer copyright -->
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 YAMS Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.prefetch","navigation.tabs","navigation.sections","navigation.indexes","navigation.path","navigation.top","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5fcf0de6.min.js"></script>
+      
+    
+  </body>
+</html>

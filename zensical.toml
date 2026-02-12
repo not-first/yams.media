@@ -1,0 +1,83 @@
+[project]
+site_name = "YAMS - Yet Another Media Server"
+site_url = "https://yams.media"
+site_description = "YAMS is a basic but powerful media server installation script"
+site_author = "YAMS Contributors"
+copyright = "&copy; 2025 YAMS Contributors"
+
+# Directory configuration
+docs_dir = "docs"
+site_dir = "site"
+
+# Navigation structure
+nav = [
+  { "Home" = "index.md" },
+  { "Install" = [
+    "install/index.md",
+    "install/description.md",
+    "install/steps.md",
+    "install/using-the-cli.md",
+  ] },
+  { "Configure" = [
+    "config/index.md",
+    "config/recommendations.md",
+    "config/prowlarr.md",
+    "config/qbittorrent.md",
+    "config/sabnzbd.md",
+    "config/radarr.md",
+    "config/sonarr.md",
+    "config/bazarr.md",
+    "config/jellyfin.md",
+    "config/plex.md",
+    "config/emby.md",
+    "config/running-everything-together.md",
+  ] },
+  { "Advanced" = [
+    "advanced/index.md",
+    "advanced/torrenting.md",
+    "advanced/vpn.md",
+    "advanced/wireguard.md",
+    "advanced/port-forwarding.md",
+    "advanced/remote-access.md",
+    "advanced/env-file.md",
+    "advanced/backups.md",
+    "advanced/prowlarr-behind-vpn.md",
+    "advanced/seeding-with-qbitmanage.md",
+    "advanced/autobrr.md",
+    "advanced/lidarr.md",
+    "advanced/portainer.md",
+    "advanced/proxmox-lxc-prerequisites.md",
+    "advanced/add-your-own-containers.md",
+  ] },
+  { "FAQs" = [
+    "faqs/index.md",
+    "faqs/common-errors.md",
+  ] },
+  { "Donate" = "donate/index.md" },
+  { "Contact" = "contact/index.md" },
+  { "Forum" = "https://forum.yams.media" },
+  { "Discord" = "https://discord.gg/Gwae3tNMST" },
+  { "Matrix" = "https://matrix.to/#/#yams-space:rogs.me" },
+]
+
+# Theme configuration
+[project.theme]
+variant = "modern"
+logo = "pics/logo.png"
+favicon = "favicon.ico"
+custom_dir = "overrides"
+
+# Enable navigation features
+features = [
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  "navigation.tabs",
+  "navigation.sections",
+  "navigation.indexes",
+  "navigation.path",
+  "navigation.top",
+  "toc.follow",
+]
+
+# Additional CSS (if needed later)
+# extra_css = ["stylesheets/extra.css"]

@@ -1,0 +1,2573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="YAMS is a basic but powerful media server installation script">
+      
+      
+        <meta name="author" content="YAMS Contributors">
+      
+      
+        <link rel="canonical" href="https://yams.media/advanced/torrenting/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../vpn/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <meta name="generator" content="zensical-0.0.23">
+    
+    
+      
+        <title>Torrenting - YAMS - Yet Another Media Server</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.1e989742.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#advanced-torrenting-with-yams" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-header__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YAMS - Yet Another Media Server
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Torrenting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../install/" class="md-tabs__link">
+          
+  
+  Install
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../config/" class="md-tabs__link">
+          
+  
+  Configure
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Advanced
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../faqs/" class="md-tabs__link">
+          
+  
+  FAQs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../donate/" class="md-tabs__link">
+        
+  
+  Donate
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../contact/" class="md-tabs__link">
+        
+  
+  Contact
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://forum.yams.media" class="md-tabs__link">
+        
+  
+  Forum
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-tabs__link">
+        
+  
+  Discord
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-tabs__link">
+        
+  
+  Matrix
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="YAMS - Yet Another Media Server" class="md-nav__button md-logo" aria-label="YAMS - Yet Another Media Server" data-md-component="logo">
+      
+  <img src="../../pics/logo.png" alt="logo">
+
+    </a>
+    YAMS - Yet Another Media Server
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../install/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/description/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is YAMS?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install/using-the-cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using the CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../config/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configure
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configure
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/recommendations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recommendations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/prowlarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prowlarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/qbittorrent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    qBittorrent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/sabnzbd/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SABnzbd
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/radarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Radarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/sonarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sonarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/bazarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bazarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/jellyfin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Jellyfin
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/plex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plex
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/emby/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emby
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../config/running-everything-together/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running everything together
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Advanced
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Torrenting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Torrenting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Downloads 📥
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Downloads 📥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-torrent-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Torrent Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-your-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Your Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first-ip-leak-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety First: IP Leak Testing 🛡️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety First: IP Leak Testing 🛡️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ip-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the IP Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying the Results 🔍
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro-tips-for-safe-torrenting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pro Tips for Safe Torrenting 🎯
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-dangerous-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blocking Dangerous File Types 🦠
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blocking Dangerous File Types 🦠">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-file-extension-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up File Extension Blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-you-might-need-to-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When You Might Need to Adjust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Common Issues 🔧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues 🔧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloads-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloads Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-speeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Speeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Drops
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices 📚
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need Help? 🆘
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wireguard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Switching Gluetun to WireGuard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../port-forwarding/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Port Forwarding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../remote-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exposing YAMS to the Internet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../env-file/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Your Environment File (.env)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backups/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backups
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prowlarr-behind-vpn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Prowlarr Behind the VPN
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../seeding-with-qbitmanage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Seeding With Qbitmanage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autobrr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autobrr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lidarr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lidarr
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../portainer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Portainer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox-lxc-prerequisites/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proxmox LXC Prerequisites
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../add-your-own-containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adding your own containers to YAMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../faqs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    FAQs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faqs/common-errors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Common Issues
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../donate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Donate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contact/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://forum.yams.media" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://discord.gg/Gwae3tNMST" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Discord
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://matrix.to/#/#yams-space:rogs.me" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#manual-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Downloads 📥
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual Downloads 📥">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-torrent-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adding Torrent Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-your-downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding Your Downloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#safety-first-ip-leak-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safety First: IP Leak Testing 🛡️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Safety First: IP Leak Testing 🛡️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-ip-checker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the IP Checker
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verifying-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying the Results 🔍
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pro-tips-for-safe-torrenting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pro Tips for Safe Torrenting 🎯
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-dangerous-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blocking Dangerous File Types 🦠
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blocking Dangerous File Types 🦠">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-up-file-extension-blocking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting Up File Extension Blocking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-this-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What This Blocks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#important-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important Notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-you-might-need-to-adjust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When You Might Need to Adjust
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-common-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting Common Issues 🔧
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting Common Issues 🔧">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloads-wont-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Downloads Won't Start
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slow-speeds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slow Speeds
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-drops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Drops
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices 📚
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#need-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Need Help? 🆘
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Advanced
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="advanced-torrenting-with-yams">Advanced Torrenting with YAMS 🌊<a class="headerlink" href="#advanced-torrenting-with-yams" title="Permanent link">&para;</a></h1>
+<p>While <a href="..//config/sonarr">Sonarr</a> and <a href="..//config/radarr">Radarr</a> handle most of your downloads automatically, sometimes you might want to download something manually. Let's explore how to do that safely!</p>
+<h2 id="manual-downloads">Manual Downloads 📥<a class="headerlink" href="#manual-downloads" title="Permanent link">&para;</a></h2>
+<h3 id="adding-torrent-files">Adding Torrent Files<a class="headerlink" href="#adding-torrent-files" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open qBittorrent at <code>http://{your-ip}:8081</code></li>
+<li>
+<p>Click the "+" icon or "Add torrent file" button:
+   <a href="../../pics/advanced-torrent-1.png"><img alt="Add torrent button" src="../../pics/advanced-torrent-1.png" /></a></p>
+</li>
+<li>
+<p>Select your .torrent file and click "Upload Torrents":
+   <a href="../../pics/advanced-torrent-2.png"><img alt="Upload torrents" src="../../pics/advanced-torrent-2.png" /></a></p>
+</li>
+<li>
+<p>Watch your download progress:
+   <a href="../../pics/advanced-torrent-3.png"><img alt="Download progress" src="../../pics/advanced-torrent-3.png" /></a></p>
+</li>
+</ol>
+<h3 id="finding-your-downloads">Finding Your Downloads<a class="headerlink" href="#finding-your-downloads" title="Permanent link">&para;</a></h3>
+<p>When your download finishes, find it in your media folder under the "downloads" directory:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/srv/media$<span class="w"> </span>tree<span class="w"> </span>downloads/torrents/
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>downloads/torrents/
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>└──<span class="w"> </span>your-downloaded-file.iso
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="m">0</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">1</span><span class="w"> </span>file
+</span></code></pre></div></p>
+<h2 id="safety-first-ip-leak-testing">Safety First: IP Leak Testing 🛡️<a class="headerlink" href="#safety-first-ip-leak-testing" title="Permanent link">&para;</a></h2>
+<p>Even with a VPN, it's good practice to verify that your real IP isn't leaking. Here's how to do a thorough check:</p>
+<h3 id="using-the-ip-checker">Using the IP Checker<a class="headerlink" href="#using-the-ip-checker" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Visit <a href="https://www.whatismyip.net/tools/torrent-ip-checker/index.php">whatismyip.net's Torrent Checker</a> and grab their test magnet link:
+   <a href="../../pics/advanced-torrent-4.png"><img alt="Torrent checker" src="../../pics/advanced-torrent-4.png" /></a></p>
+</li>
+<li>
+<p>In qBittorrent, click "Add Torrent Link":
+   <a href="../../pics/advanced-torrent-5.png"><img alt="Add magnet link" src="../../pics/advanced-torrent-5.png" /></a></p>
+</li>
+<li>
+<p>Paste the magnet link and click "Download":
+   <a href="../../pics/advanced-torrent-6.png"><img alt="Paste magnet" src="../../pics/advanced-torrent-6.png" /></a></p>
+</li>
+<li>
+<p>You'll see a new torrent called "Torrent Tracker IP Checker" in your list. Don't worry - it won't actually download anything!
+   <a href="../../pics/advanced-torrent-7.png"><img alt="IP checker torrent" src="../../pics/advanced-torrent-7.png" /></a></p>
+</li>
+<li>
+<p>Back on the checker website, you'll see your torrent client's IP:
+   <a href="../../pics/advanced-torrent-8.png"><img alt="IP check results" src="../../pics/advanced-torrent-8.png" /></a></p>
+</li>
+</ol>
+<h3 id="verifying-the-results">Verifying the Results 🔍<a class="headerlink" href="#verifying-the-results" title="Permanent link">&para;</a></h3>
+<p>For proper privacy protection, check that:
+1. The reported IP is <strong>different</strong> from your real IP address
+2. The IP matches what <code>yams check-vpn</code> reports
+3. The country shown matches your VPN server location</p>
+<h2 id="pro-tips-for-safe-torrenting">Pro Tips for Safe Torrenting 🎯<a class="headerlink" href="#pro-tips-for-safe-torrenting" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Always Verify VPN First</strong>
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>yams<span class="w"> </span>check-vpn
+</span></code></pre></div>
+   Do this before starting any downloads!</p>
+</li>
+<li>
+<p><strong>Use the Kill Switch</strong>
+   YAMS configures qBittorrent to only use the VPN network interface. If the VPN drops, downloads stop automatically.</p>
+</li>
+<li>
+<p><strong>Regular Testing</strong></p>
+</li>
+<li>Run the IP leak test monthly</li>
+<li>Check VPN status before large downloads</li>
+<li>
+<p>Monitor qBittorrent's connection status</p>
+</li>
+<li>
+<p><strong>Download Organization</strong></p>
+</li>
+<li>Use labels for different types of content</li>
+<li>Set up category-specific download folders</li>
+<li>
+<p>Remove completed torrents regularly</p>
+</li>
+<li>
+<p><strong>Enable Port Forwarding</strong></p>
+</li>
+<li>Check our <a href="..//advanced/port-forwarding/">Port Forwarding Guide</a></li>
+<li>Significantly improves download speeds</li>
+<li>Works automatically with ProtonVPN</li>
+</ol>
+<h2 id="blocking-dangerous-file-types">Blocking Dangerous File Types 🦠<a class="headerlink" href="#blocking-dangerous-file-types" title="Permanent link">&para;</a></h2>
+<p>Protect yourself from malware and viruses by configuring qBittorrent to automatically block potentially dangerous file extensions. This prevents malicious files from being downloaded even if they're included in an otherwise legitimate torrent.</p>
+<h3 id="setting-up-file-extension-blocking">Setting Up File Extension Blocking<a class="headerlink" href="#setting-up-file-extension-blocking" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open qBittorrent at <code>http://{your-ip}:8081</code></li>
+<li>Navigate to <strong>Tools</strong> → <strong>Options</strong> → <strong>Downloads</strong></li>
+<li>Find the <strong>"Excluded file names"</strong> section</li>
+<li>Copy and paste this comprehensive blocklist of dangerous extensions:</li>
+</ol>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>*.apk;*.bin;*.dll;*.exe;*.msi;*.txt;*.url;*.001;*.7z;*.7z*;*.arj;*.arj*;*.b1;*.b1*;*.b6z*;*.b6z;*.bh*;*.bh*;*.br*;*.br;*.bz2*;*.bz2;*.cab*;*.cab;*.dar*;*.dar;*.dmg*;*.dmg;*.gz*;*.gz;*.ha*;*.ha;*.ice*;*.ice;*.ipa*;*.ipa;*.iso*;*.iso;*.kgb*;*.kgb;*.lz*;*.lz;*.partimg*;*.partimg;*.rar*;*.rar;*.sda*;*.sda;*.sea*;*.sea;*.st*;*.st;*.tar*;*.tar;*.tbz2*;*.tbz2;*.tgz*;*.tgz;*.tlz;*.tlz;*.txz*;*.txz;*.wim*;*.wim;*.xz*;*.xz;*.z*;*.z;*.zip*;*.zip;*.zipx*;*.zipx;*.zpaq*;*.zpaq;*.zst*;*.zst;*.zz*;*.zz;*.accda;*.accdb;*.accdc;*.accde;*.accdr;*.accdt;*.accdu;*.cfg;*.conf;*.csv;*.doc;*.docm;*.docx;*.dotm;*.dotx;*.duarcfg;*.ecf;*.env;*.eps;*.hta;*.html;*.ini;*.inf;*.info;*.inx;*.job;*.json;*.jtrrcfg;*.md;*.netcfg;*.netccfg;*.netecfg;*.netgcfg;*.ods;*.one;*.pdf;*.php;*.pot;*.potm;*.potx;*.ppa;*.ppam;*.pps;*.ppsm;*.ppsx;*.ppt;*.pptm;*.pptx;*.properties;*.prx;*.prxe;*.ps;*.pub;*.puff;*.rc;*.reg;*.rtf;*.sldm;*.sldx;*.sumocfg;*.toml;*.wbk;*.xaml;*.xlam;*.xls;*.xlsb;*.xlsm;*.xlsx;*.xlm;*.xlt;*.xltm;*.xltx;*.xml;*.xsd;*.yaml;*.yml;*.4DB;*.4DC;*.4DD;*.BSON;*.CDB;*.CRYPT1;*.CRYPT10;*.CRYPT5;*.CRYPT6;*.CRYPT7;*.CRYPT8;*.CRYPT9;*.DBC;*.DB;*.DB-JOURNAL;*.DB-WAL;*.DDL;*.FMP12;*.FMPSL;*.FP3;*.FP7;*.GDB;*.MARSHAL;*.MDB;*.MDF;*.NDF;*.NSF;*.ODB;*.PDB;*.SDF;*.SQLITE;*.SQLITEDB;*.SQLITE3;*.TRC;*.UDL;*.appx;*.appxbundle;*.axf;*.bat;*.cmd;*.deb;*.elf;*.ex;*.ins;*.isu;*.jar;*.js;*.jsx;*.jse;*.j;*.ko;*.lnk;*.mpkg;*.msix;*.mod;*.out;*.o;*.obs;*.pkg;*.ps1;*.py;*.pyc;*.pyo;*.rpm;*.run;*.scr;*.script;*.sh;*.so;*.vb;*.vbs;*.ws;*.wsf;*.wsh;*.0XE;*.73K;*.89K;*.A6P;*.AC;*.ACC;*.ACR;*.ACTM;*.AHK;*.AIR;*.APP;*.ARSCRIPT;*.AS;*.ASB;*.AWK;*.AZW2;*.BEAM;*.BTM;*.BUP;*.CAB;*.CEL;*.CELX;*.CHM;*.COF;*.COM;*.CRT;*.DEK;*.DLD;*.DMC;*.DXL;*.EAR;*.EBM;*.EBS;*.EBS2;*.ECF;*.EHAM;*.ES;*.EX4;*.EXM;*.EXP;*.EXOPC;*.EZS;*.FAS;*.FKY;*.FPI;*.FRS;*.FXP;*.GEO;*.GS;*.HAM;*.HMS;*.HPF;*.IFO;*.IIM;*.IPF;*.KIX;*.LO;*.LS;*.MAM;*.MCR;*.MEL;*.MPX;*.MRC;*.MS;*.MSP;*.MXE;*.NEXE;*.OCX;*.ORE;*.OTM;*.PEX;*.PIM;*.PLX;*.PRC;*.PVD;*.PWC;*.QPX;*.RBX;*.ROX;*.RPJ;*.S2A;*.SBS;*.SCA;*.SCAR;*.SCB;*.SPR;*.TCP;*.THM;*.TLB;*.TMX;*.UDF;*.UPX;*.VLX;*.VPM;*.WCM;*.WEBSITE;*.WIDGET;*.WIZ;*.WPK;*.WPM;*.XAP;*.XBAP;*.XIP;*.XQT;*.XYS;*.ZL9;*(sample).*
+</span></code></pre></div>
+<ol>
+<li>Click <strong>OK</strong> to save your settings</li>
+</ol>
+<h3 id="what-this-blocks">What This Blocks<a class="headerlink" href="#what-this-blocks" title="Permanent link">&para;</a></h3>
+<p>This blocklist prevents downloading of:
+- <strong>Executables</strong>: <code>.exe</code>, <code>.bat</code>, <code>.cmd</code>, <code>.sh</code>, <code>.ps1</code>, <code>.vbs</code>, and many others
+- <strong>Compressed archives</strong>: <code>.zip</code>, <code>.rar</code>, <code>.7z</code>, <code>.tar</code>, and variants (which often hide malware)
+- <strong>System files</strong>: <code>.dll</code>, <code>.sys</code>, <code>.bin</code>, <code>.so</code>
+- <strong>Scripts</strong>: <code>.js</code>, <code>.jsx</code>, <code>.py</code>, <code>.php</code>, <code>.vbs</code>
+- <strong>Documents with macros</strong>: <code>.docm</code>, <code>.xlsm</code>, <code>.pptm</code>
+- <strong>Database files</strong>: Various database formats that can contain malicious code
+- <strong>Sample files</strong>: Files named <code>*sample.*</code> (commonly used to hide malware)</p>
+<h3 id="important-notes">Important Notes<a class="headerlink" href="#important-notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>This won't affect legitimate media files</strong>: Your movies, TV shows, and music will download normally</li>
+<li><strong>Sonarr/Radarr are unaffected</strong>: Automatic downloads continue working as expected</li>
+<li><strong>Manual downloads get filtered</strong>: If a torrent contains blocked files, they simply won't download</li>
+<li><strong>Keep your list updated</strong>: Save the <a href="https://raw.githubusercontent.com/kurzickkrozz/other/refs/heads/main/Blocked%20File%20Extensions">blocklist source</a> and check periodically for updates</li>
+</ul>
+<h3 id="when-you-might-need-to-adjust">When You Might Need to Adjust<a class="headerlink" href="#when-you-might-need-to-adjust" title="Permanent link">&para;</a></h3>
+<p>Some legitimate torrents may include blocked file types:
+- <strong>Software ISOs</strong>: May contain installers (consider downloading from official sources instead)
+- <strong>Game torrents</strong>: Often include executables (evaluate carefully and scan with antivirus)
+- <strong>Development tools</strong>: Might include scripts or binaries</p>
+<p>For these cases, temporarily disable the filter, but <strong>always scan downloads with antivirus software</strong> and only download from trusted sources.</p>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues 🔧<a class="headerlink" href="#troubleshooting-common-issues" title="Permanent link">&para;</a></h2>
+<h3 id="downloads-wont-start">Downloads Won't Start<a class="headerlink" href="#downloads-wont-start" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check VPN connection:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>yams<span class="w"> </span>check-vpn
+</span></code></pre></div></li>
+<li>Verify tracker status in qBittorrent</li>
+<li>Try a different VPN server</li>
+</ol>
+<h3 id="slow-speeds">Slow Speeds<a class="headerlink" href="#slow-speeds" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Try a VPN server closer to you</li>
+<li>Check if your VPN provider throttles P2P</li>
+<li>Verify you're not hitting VPN bandwidth limits</li>
+</ol>
+<h3 id="connection-drops">Connection Drops<a class="headerlink" href="#connection-drops" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Check VPN provider status</li>
+<li>Try a different VPN server</li>
+<li>Monitor system resources</li>
+</ol>
+<h2 id="best-practices">Best Practices 📚<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Keep VPN Active</strong></li>
+<li>Always check VPN status before downloading</li>
+<li>Use <code>yams check-vpn</code> regularly</li>
+<li>
+<p>Monitor qBittorrent's network interface</p>
+</li>
+<li>
+<p><strong>Regular Maintenance</strong></p>
+</li>
+<li>Clear completed torrents</li>
+<li>Update qBittorrent when YAMS prompts</li>
+<li>
+<p>Run periodic IP leak tests</p>
+</li>
+<li>
+<p><strong>Download Management</strong></p>
+</li>
+<li>Set reasonable ratio limits</li>
+<li>Use categories for organization</li>
+<li>Monitor disk space regularly</li>
+</ol>
+<h2 id="need-help">Need Help? 🆘<a class="headerlink" href="#need-help" title="Permanent link">&para;</a></h2>
+<p>Having issues with torrenting? We've got you covered:
+1. Check the <a href="..//faqs/common-errors/">Common Issues</a> page
+2. Visit the <a href="https://forum.yams.media">YAMS Forum</a>
+3. Join our <a href="https://discord.gg/Gwae3tNMST">Discord</a> or <a href="https://matrix.to/#/#yams-space:rogs.me">Matrix</a> chat</p>
+<p>Remember: Safe torrenting is good torrenting. Always verify your VPN is working before downloading! 🛡️</p>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+
+      <!-- Custom footer content -->
+      <div class="md-footer-custom">
+        <ul
+          style="list-style: none; padding: 0; margin: 20px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/yams-small.png" style="height: 20px;" alt="YAMS" />
+            <a href="https://yams.media">yams.media</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitea-small.png" style="height: 20px;" alt="Gitea" />
+            <a href="https://git.rogs.me/rogs/yams">git.rogs.me/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/gitlab-small.png" style="height: 20px;" alt="GitLab" />
+            <a href="https://gitlab.com/rogs/yams">gitlab.com/rogs/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/github-small.png" style="height: 20px;" alt="GitHub" />
+            <a href="https://github.com/rogsme/yams">github.com/rogsme/yams</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/discord-small.png" style="height: 20px;" alt="Discord" />
+            <a href="https://discord.gg/Gwae3tNMST">Discord</a>
+          </li>
+          <li style="display: flex; align-items: center; gap: 5px;">
+            <img src="../../pics/element-small.png" style="height: 20px;" alt="Matrix" />
+            <a href="https://matrix.to/#/#yams-space:rogs.me">#yams-space:rogs.me</a>
+          </li>
+          
+          <li>
+            <img
+              src="https://visitor-badge.laobi.icu/badge?page_id=https%3A//yams.media/advanced/torrenting/&right_color=%235FAF63"
+              alt="visitor badge" style="height: 20px;" />
+          </li>
+          
+          <li>
+            <a href="https://www.buymeacoffee.com/rogs">🍕 Support YAMS! 🤑</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Include the default footer copyright -->
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2025 YAMS Contributors
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.instant","navigation.instant.prefetch","navigation.tabs","navigation.sections","navigation.indexes","navigation.path","navigation.top","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5fcf0de6.min.js"></script>
+      
+    
+  </body>
+</html>
