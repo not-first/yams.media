@@ -133,7 +133,71 @@ In this configuration, `10.8.0.2` is the WireGuard IP of my Raspberry Pi, and `e
 
 Here's how my setup looks visually:
 
-[![Network Architecture](../pics/my-setup.png)](../pics/my-setup.png)
+```mermaid
+flowchart LR
+    %% Users
+    Admin[👤 Power Users]
+    Family[👨‍👩‍👧 Family Members]
+
+    %% External Services
+    VPS[🏢 Hetzner VPS<br/>wg-easy Server<br/>10.8.0.1]
+    CF[🚇 Cloudflare Tunnels]
+
+    %% Home Network Container
+    subgraph Home ["🏠 Home Network (192.168.1.0/24)"]
+        Devices[📱 Local Devices]
+        MainPihole[🛡️ Main Pi-hole<br/>192.168.1.10]
+
+        subgraph RPI ["🍓 Raspberry Pi Central Hub"]
+            WGClient[🔒 WireGuard Client]
+            PiholeRPI[🛡️ Pi-hole DNS]
+            Nginx[⚡ Nginx Proxy Manager]
+        end
+
+        subgraph YAMS ["🎬 YAMS Server"]
+            Emby[📺 Emby]
+            Radarr[🎬 Radarr]
+            Sonarr[📺 Sonarr]
+            QB[⬇️ qBittorrent]
+            Other[⚙️ Other Services]
+        end
+    end
+
+    %% User connections
+    Admin -.-> VPS
+    Family -.-> CF
+
+    %% VPN path
+    VPS <--> WGClient
+
+    %% Local network connections
+    Devices --> MainPihole
+    MainPihole --> Nginx
+
+    %% VPN DNS routing
+    WGClient --> PiholeRPI
+    PiholeRPI --> Nginx
+
+    %% Direct tunnel
+    CF --> Emby
+
+    %% Nginx proxies everything
+    Nginx --> Emby
+    Nginx --> Radarr
+    Nginx --> Sonarr
+    Nginx --> QB
+    Nginx --> Other
+
+    %% Styling
+    classDef userStyle fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef externalStyle fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef serviceStyle fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+
+    class Admin,Family userStyle
+    class VPS,CF externalStyle
+    class Devices,MainPihole,WGClient,PiholeRPI,Nginx serviceStyle
+    class Emby,Radarr,Sonarr,QB,Other serviceStyle
+```
 
 This setup gives me the best of both worlds - easy access for family members and secure, full control for myself when managing the server remotely.
 
