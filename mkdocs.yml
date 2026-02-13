@@ -8,8 +8,9 @@ site_author: YAMS Contributors
 copyright: "&copy; 2025 YAMS Contributors"
 
 # Repository
-repo_url: https://gitlab.com/rogs/yams
-repo_name: YAMS
+repo_url: https://github.com/not-first/yams.media
+repo_name: not-first/yams.media
+edit_uri: edit/mkdocs-material/docs/
 
 # Directory configuration
 docs_dir: docs
@@ -26,14 +27,16 @@ theme:
   palette:
     # Light mode
     - scheme: default
-      primary: custom
+      primary: white
+      accent: green
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
 
     # Dark mode
     - scheme: slate
-      primary: custom
+      primary: black
+      accent: green
       toggle:
         icon: material/weather-night
         name: Switch to light mode
@@ -49,10 +52,19 @@ theme:
     - navigation.top
     - navigation.footer
     - toc.follow
+    - content.action.edit
+    - content.action.view
 
 # Custom CSS
-extra_css:
-  - stylesheets/extra.css
+# extra_css:
+#   - stylesheets/extra.css
+
+# Plugins
+plugins:
+  - search
+  - git-committers:
+      repository: not-first/yams.media
+      branch: mkdocs-material
 
 # Social links
 extra:
