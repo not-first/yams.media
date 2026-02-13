@@ -12,7 +12,7 @@ From their [website](https://jellyfin.org/):
 
 > Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
 
-In YAMS, Jellyfin is going to be your personal Netflix! 🍿 It's 100% open source and lets you stream your TV shows and movies to any device. Best part? No monthly fees! 
+In YAMS, Jellyfin is going to be your personal Netflix! 🍿 It's 100% open source and lets you stream your TV shows and movies to any device. Best part? No monthly fees!
 
 ## Initial configuration
 
@@ -113,4 +113,4 @@ And there it is! Your very own streaming service homepage! 🌟
 
 ## That's all folks! 🎬
 
-YAMS is now fully up and running! Ready to add some content? Move on to [Running everything together](/config/running-everything-together) to see how all these pieces work together!
+YAMS is now fully up and running! Ready to add some content? Move on to [Running everything together](running-everything-together.md) to see how all these pieces work together!

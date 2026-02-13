@@ -10,7 +10,7 @@ In general, it is good practice to seed any torrents you download. Seeding is th
 
 Many private trackers also require maintenance of a 'ratio'. This ratio is calculating by the amount seeded over the amount downloaded, and must be maintained above a limit to ensure you are contributing to a tracker community.
 
-> Check out [implemeting Autobrr](/advanced/autobrr) into YAMS to further help your seeding!
+> Check out [implemeting Autobrr](autobrr.md) into YAMS to further help your seeding!
 
 Within a default YAMS setup, [seeding is essentially not enabled](https://yams.media/config/qbittorrent/#is-this-a-dick-move) once you have downloaded the file. However, if you already have the file downloaded, you might as well seed it to others right?
 
@@ -76,7 +76,7 @@ If you wish to use another service, maybe to delete *unwatched media* too, pleas
 The power of this app is a double edged sword. It can help you to amazingly automate your media server just how you like, but keep in mind that, if misconfigured, it has the ability to delete downloads and manipulate torrents. Expect to invest some time into learning its decently complicated configuration before reaching your desired state. This guide should assist in avoiding lots of this complication, but is not a direct replacement for learning how the tool works.
 
 ### Docker Compose Entry
-> This `docker-compose.custom.yml` entry is configured for this guide. If you have other wishes, see [how to set the container up with the defaults](/advanced/add-your-own-containers/#qbitmanage-) ready to be configured for your exact needs.
+> This `docker-compose.custom.yml` entry is configured for this guide. If you have other wishes, see [how to set the container up with the defaults](add-your-own-containers.md#qbitmanage-) ready to be configured for your exact needs.
 
 Add the following entry in your `docker-compose.custom.yml` file, below the `services:` parent item.
 ```yaml

@@ -106,6 +106,6 @@ yams destroy radarr      # Destroys only the 'radarr' service (its container and
 
 ## Troubleshooting 🔧
 
-Getting a `docker` permission error when trying to use the CLI? Don't panic! Head over to our [Common Issues](/faqs/common-errors/) page for the fix.
+Getting a `docker` permission error when trying to use the CLI? Don't panic! Head over to our [Common Issues](../faqs/common-errors.md) page for the fix.
 
 Remember: YAMS's CLI is here to make your life easier! If you're ever unsure about a command, just add `--help` at the end or check back here for a refresher. Happy streaming! 🎬

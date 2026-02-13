@@ -7,7 +7,7 @@ description: A basic but powerful media server installation script
 
 YAMS is a basic but powerful media server installation script that helps you set up your complete media automation stack with ease.
 
-[Get Started with Installation](install/){ .md-button .md-button--primary }
+[Get Started with Installation](install/index.md){ .md-button .md-button--primary }
 
 ## What You Get
 
@@ -29,4 +29,4 @@ YAMS automates the installation and configuration of:
 - **Community Driven** - Active support and development
 - **Flexible** - Customize to your needs
 
-Ready to build your media server? Check out the [Installation Guide](install/) to get started!
+Ready to build your media server? Check out the [Installation Guide](install/index.md) to get started!

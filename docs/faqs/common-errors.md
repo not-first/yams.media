@@ -101,7 +101,7 @@ If your VPN isn't working, let's troubleshoot step by step:
 ### qBittorrent Not Accessible 🔒
 
 1. **Check if VPN is Enabled**
-   - Review [VPN Configuration](/advanced/vpn/)
+   - Review [VPN Configuration](../advanced/vpn.md)
    - Run VPN check:
      ```bash
      yams check-vpn

@@ -1,6 +1,6 @@
 ---
 title: "Proxmox LXC Prerequisites"
-date: 2025-03-29T10:00:00-03:00 
+date: 2025-03-29T10:00:00-03:00
 draft: false
 weight: 10
 summary: Required steps before installing YAMS in a Proxmox LXC container.
@@ -43,4 +43,4 @@ Follow these steps on your Proxmox **host** system:
 
 ## Next Steps
 
-After completing these prerequisites and restarting the LXC container, you can now log into the LXC container's console and proceed with the standard YAMS installation as described in the [Installation Guide](/install/steps/).
+After completing these prerequisites and restarting the LXC container, you can now log into the LXC container's console and proceed with the standard YAMS installation as described in the [Installation Guide](../install/steps.md).

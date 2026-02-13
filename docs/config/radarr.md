@@ -54,7 +54,7 @@ Finally, click on "Save Changes".
 
 ### Download Clients
 
-Time to connect Radarr to our download tools! This is where we'll link up with [qBittorrent](/config/qbittorrent) and [SABnzbd](/config/sabnzbd).
+Time to connect Radarr to our download tools! This is where we'll link up with [qBittorrent](qbittorrent.md) and [SABnzbd](sabnzbd.md).
 
 #### qBittorrent Setup
 
@@ -99,7 +99,7 @@ Fill in these details:
 - Port: 8080
 - API Key: your SABnzbd API key
 
-Don't have your SABnzbd API key handy? No worries! You can find it here: [Getting your API key for Sonarr and Radarr](/config/sabnzbd/#getting-your-api-key-for-sonarr-and-radarr)
+Don't have your SABnzbd API key handy? No worries! You can find it here: [Getting your API key for Sonarr and Radarr](sabnzbd.md#getting-your-api-key-for-sonarr-and-radarr)
 
 [![radarr-20](../pics/radarr-20.png)](../pics/radarr-20.png)
 
@@ -113,7 +113,7 @@ If the test worked, hit "Save". You should now see both download clients on the 
 
 ## Moving forward! 🚀
 
-Looking good! Now we can continue with [Sonarr](/config/sonarr). We're getting closer to having your own personal Netflix!
+Looking good! Now we can continue with [Sonarr](sonarr.md). We're getting closer to having your own personal Netflix!
 
 ## Want to get really fancy?
 

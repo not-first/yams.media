@@ -12,7 +12,7 @@ From their [website](https://www.bazarr.media/):
 
 > Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.
 
-In YAMS, Bazarr is your subtitle superstar! 🌟 It's going to download subtitles in any language you choose, sort them, and put them right where Emby/Jellyfin/Plex can find them. No more hunting for subtitles manually! 
+In YAMS, Bazarr is your subtitle superstar! 🌟 It's going to download subtitles in any language you choose, sort them, and put them right where Emby/Jellyfin/Plex can find them. No more hunting for subtitles manually!
 
 ## Initial Configuration
 
@@ -82,7 +82,7 @@ Now you'll see OpenSubtitles.org in your providers list! Click "Save" at the top
 
 ### Subtitles
 
-Click on "Subtitles" in the left menu and scroll down to "Performance / Optimization". 
+Click on "Subtitles" in the left menu and scroll down to "Performance / Optimization".
 
 First thing to do: Disable "Use Embedded Subtitles". We want our subtitles free-range, not caged! 🐓
 
@@ -110,7 +110,7 @@ Happy with your settings? Hit "Save" at the top!
 
 ### Connecting to Sonarr
 
-Time to link Bazarr with [Sonarr](/config/sonarr)! First, we need Sonarr's API key.
+Time to link Bazarr with [Sonarr](sonarr.md)! First, we need Sonarr's API key.
 
 Head to [http://{your-ip-address}:8989/settings/general]() and find the API Key under "Security".
 
@@ -140,7 +140,7 @@ Magic time! The "Series" section should appear in your left menu! ✨
 
 ### Connecting to Radarr
 
-Now let's connect to [Radarr](/config/radarr)! First step: get that API key.
+Now let's connect to [Radarr](radarr.md)! First step: get that API key.
 
 Go to [http://{your-ip-address}:7878/settings/general]() and find the API Key under "Security".
 
@@ -170,9 +170,9 @@ More magic! The "Movies" section appears in your left menu! ✨
 ### Almost there! 🏃‍♂️
 
 Just one last step! Time to set up your media service. Pick your path:
-- [Jellyfin](/config/jellyfin)
-- [Emby](/config/emby)
-- [Plex](/config/plex)
+- [Jellyfin](jellyfin.md)
+- [Emby](emby.md)
+- [Plex](plex.md)
 
 ## Want to become a subtitle master? 🎓
 

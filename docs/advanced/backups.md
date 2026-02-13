@@ -169,7 +169,7 @@ ls -t $BACKUP_DIR/yams-backup-* | tail -n +$((MAX_BACKUPS + 1)) | xargs rm -f
 ## Need Help? 🆘
 
 If you run into backup or restore issues:
-1. Check our [Common Issues](/faqs/common-errors/) page
+1. Check our [Common Issues](../faqs/common-errors.md) page
 2. Visit the [YAMS Forum](https://forum.yams.media)
 3. Join our [Discord](https://discord.gg/Gwae3tNMST)
 

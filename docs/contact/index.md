@@ -28,8 +28,8 @@ Got questions? Suggestions? Just want to say hi? We've got plenty of ways to rea
 ## Ground Rules 📏
 
 Before reaching out, please:
-- Check the [documentation](/) first
-- Review [Common Issues](/faqs/common-errors/)
+- Check the [documentation](../index.md) first
+- Review [Common Issues](../faqs/common-errors.md)
 - Be specific about your problem
 - Include relevant logs or screenshots
 - Be patient and kind

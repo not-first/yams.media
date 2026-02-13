@@ -22,7 +22,7 @@ YAMS only needs a few things to get started:
   ```
   You **won't** be able to install YAMS. ⚠️
 
-- **Proxmox LXC Users:** YAMS can be installed within an unprivileged Proxmox LXC container, but this requires specific configuration on the Proxmox host **before** you run the YAMS installation script inside the container. Please follow the steps in our [Proxmox LXC Prerequisites guide](/advanced/proxmox-lxc-prerequisites/) before proceeding with the installation steps below.
+- **Proxmox LXC Users:** YAMS can be installed within an unprivileged Proxmox LXC container, but this requires specific configuration on the Proxmox host **before** you run the YAMS installation script inside the container. Please follow the steps in our [Proxmox LXC Prerequisites guide](../advanced/proxmox-lxc-prerequisites.md) before proceeding with the installation steps below.
 
 Don't worry if you don't have `docker` and `docker-compose` installed - the script can handle that for you on Debian and Ubuntu!
 
@@ -59,7 +59,7 @@ Before we dive in, make sure you have:
   + `/srv/media/downloads`: For your downloads
   + `/srv/media/blackhole`: For your torrent blackhole
 - **A regular user to run and own the media files:** Don't use `root` (I mean, I can't stop you, but come on! 😅)
-- **A VPN service (optional but STRONGLY recommended):** Choose one from [this list](/advanced/vpn#official-supported-vpns). I always recommend [ProtonVPN](https://protonvpn.com/) because it's super easy to set up!
+- **A VPN service (optional but STRONGLY recommended):** Choose one from [this list](../advanced/vpn.md#official-supported-vpns). I always recommend [ProtonVPN](https://protonvpn.com/) because it's super easy to set up!
 
 ## Pre-Installation Setup
 
@@ -95,7 +95,7 @@ Make sure you can run `docker` **without** `sudo`! Try this:
 docker run hello-world
 ```
 
-If it fails, you might need to add your user to the docker group. Follow [Docker's post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) or check our [Common docker permission errors](/faqs/common-errors/#common-docker-permission-errors) page.
+If it fails, you might need to add your user to the docker group. Follow [Docker's post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) or check our [Common docker permission errors](../faqs/common-errors.md#common-docker-permission-errors) page.
 
 ## Installation Steps
 
@@ -381,19 +381,19 @@ Don't worry about memorizing these - they're saved in `~/yams_services.txt` for 
 
 ## What's Next?
 
-Time to configure your new media server! Head over to [Configuration](/config) and follow these guides in order:
-1. [qBittorrent](/config/qbittorrent)
-2. [SABnzbd](/config/sabnzbd)
-3. [Radarr](/config/radarr)
-4. [Sonarr](/config/sonarr)
-5. [Prowlarr](/config/prowlarr)
-6. [Bazarr](/config/bazarr)
-7. Your chosen media service:
-   - [Jellyfin](/config/jellyfin)
-   - [Emby](/config/emby)
-   - [Plex](/config/plex)
+Time to configure your new media server! Head over to [Configuration](../config/index.md) and follow these guides in order:
+1. [qBittorrent](../config/qbittorrent.md)
+2. [SABnzbd](../config/sabnzbd.md)
+3. [Radarr](../config/radarr.md)
+4. [Sonarr](../config/sonarr.md)
+5. [Prowlarr](../config/prowlarr.md)
+6. [Bazarr](../config/bazarr.md)
+7. Choose your media server:
+   - [Jellyfin](../config/jellyfin.md)
+   - [Emby](../config/emby.md)
+   - [Plex](../config/plex.md)
 
 Need help? We've got your back!
-- Check our [Common Issues](/faqs/common-errors/) page
+- Check our [Common Issues](../faqs/common-errors.md) page
 - Visit the [YAMS Forum](https://forum.yams.media)
 - Join our [Discord](https://discord.gg/Gwae3tNMST)

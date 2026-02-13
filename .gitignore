@@ -3,6 +3,6 @@
 *.log
 tmp/
 
-### Zensical ###
-# Generated files by hugo
+### MkDocs ###
+# Generated static site files
 /site

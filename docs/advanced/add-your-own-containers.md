@@ -26,7 +26,7 @@ cd /opt/yams
 
 ## The Magic Variables ✨
 
-YAMS provides some handy environment variables you can use in your custom containers. These are defined in your central [`.env` settings file]({{< relref "/advanced/env-file" >}}) (learn more about it!) and make it super easy to keep your custom containers working in harmony with YAMS:
+YAMS provides some handy environment variables you can use in your custom containers. These are defined in your central [`.env` settings file](env-file.md) (learn more about it!) and make it super easy to keep your custom containers working in harmony with YAMS:
 
 ```yaml
 PUID: Your user ID
@@ -184,7 +184,7 @@ Before you get qBitManage up and running, you'll have to take a deep dive into h
 
 Whilst configuring, ensure you set the `root_directory` option with the `directory` parent to `/data/downloads/torrents`. If you ever have trouble with paths, remember, qBitManage operates from the base level of your YAMS `${MEDIA_DIRECTORY}` variable.
 
-*If you want to jump straight into a guided setup, check out *[Seeding with qBitManage](/advanced/seeding-with-qbitmanage)* for a setup where all torrents are seeded whilst the media remains in your server, and then smoothly removed after the item is watched in your streaming application.*
+*If you want to jump straight into a guided setup, check out *[Seeding with qBitManage](seeding-with-qbitmanage.md)* for a setup where all torrents are seeded whilst the media remains in your server, and then smoothly removed after the item is watched in your streaming application.*
 
 ### Autobrrr 🐇
 [Autobrr](https://autobrr.com/introduction) is an app that allows you connect to an Indexer's IRC channel, immediately starting torrent downloads for newer movies/shows without relying on Radarr/Sonarr's slower RSS feed. This allows you to help build ratio on private trackers by beating everyone else to the torrent, so you can seed it to everyone else!
@@ -204,7 +204,7 @@ Whilst configuring, ensure you set the `root_directory` option with the `directo
       - ${INSTALL_DIRECTORY}/config/autobrr:/config
 ```
 
-Done! To fully connect Autobrr to your media server's downloads, continue with the full guide [here](/advanced/autobrr).
+Done! To fully connect Autobrr to your media server's downloads, continue with the full guide [here](autobrr.md).
 
 ## Pro Tips 🎓
 
@@ -224,7 +224,7 @@ Want your custom container to use YAMS's VPN? Add this to your container config:
     network_mode: "service:gluetun"
 ```
 
-Check out [Running Prowlarr behind the VPN](/advanced/prowlarr-behind-vpn) for a detailed example!
+Check out [Running Prowlarr behind the VPN](prowlarr-behind-vpn.md) for a detailed example!
 
 ### 4. Static IP Address 📍
 For some advanced setups, you might want to assign a static IP address to your custom container within the YAMS network. This can be useful for consistent access or firewall rules.
@@ -247,7 +247,7 @@ To do this, add a `networks` section to your container definition and specify th
 - **Always choose an IP address outside of this range to avoid conflicts**, for example, `172.60.0.21` or higher. You can check the `docker-compose.example.yaml` file for the IPs used by YAMS's services.
 
 ### 5. Variable Power 💪
-You can access any environment variable defined in YAMS's [`.env` file]({{< relref "/advanced/env-file" >}}) within your custom containers. Just use the `${VARIABLE_NAME}` syntax! This is great for things like API keys or other settings you want to manage centrally.
+You can access any environment variable defined in YAMS's [`.env` file](env-file.md) within your custom containers. Just use the `${VARIABLE_NAME}` syntax! This is great for things like API keys or other settings you want to manage centrally.
 
 ## Common Gotchas 🚨
 
@@ -267,7 +267,7 @@ Here are some popular containers that work great with YAMS:
 ## Need Help? 🆘
 
 If you run into any issues:
-1. Check our [Common Issues](/faqs/common-errors/) page
+1. Check our [Common Issues](../faqs/common-errors.md) page
 2. Visit the [YAMS Forum](https://forum.yams.media)
 3. Join our [Discord](https://discord.gg/Gwae3tNMST)
 

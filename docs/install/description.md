@@ -16,7 +16,7 @@ Back in 2019, I had a mission: Create a media server that my non-tech-savvy girl
 
 Fast forward to today, and guess what? Mission accomplished! 🎉 Not only does my girlfriend use it without any issues, but I've even got my mom (who lives 5000km away!) streaming her favorite shows with zero problems.
 
-When my friends saw how well it worked, they all wanted one too. But explaining how to set everything up was like trying to teach a cat to swim - technically possible, but way more complicated than it needed to be. 
+When my friends saw how well it worked, they all wanted one too. But explaining how to set everything up was like trying to teach a cat to swim - technically possible, but way more complicated than it needed to be.
 
 That's when it hit me: Why not create a script that could do all the heavy lifting? And that's how YAMS was born! Now anyone can build their own kickass media server without needing a PhD in computer science. 😎
 
@@ -61,6 +61,6 @@ Want to dive deep into file management best practices? Check out the [TRaSH Guid
 - 🎛️ Portainer: Makes managing everything a breeze
 - 🎵 Lidarr: Handles your music collection
 
-All these pieces work together seamlessly to create a media server that's both powerful AND easy to use. It's like having your own streaming service, but better - because YOU'RE in control! 
+All these pieces work together seamlessly to create a media server that's both powerful AND easy to use. It's like having your own streaming service, but better - because YOU'RE in control!
 
-Ready to dive in? Let's [get started with the installation](/install/steps)!
+Ready to dive in? Let's [get started with the installation](steps.md)!

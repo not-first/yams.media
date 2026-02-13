@@ -8,7 +8,7 @@ summary: SABnzbd is a program to download binary files from Usenet servers. Many
 
 ## Note - SABnzbd is optional
 
-SABnzbd is an optional component. If you prefer to use torrents exclusively, you can skip this section and proceed to the [Radarr configuration](/config/radarr). To use SABnzbd, you will need a Usenet server and indexers, which are typically paid services.
+SABnzbd is an optional component. If you prefer to use torrents exclusively, you can skip this section and proceed to the [Radarr configuration](radarr.md). To use SABnzbd, you will need a Usenet server and indexers, which are typically paid services.
 
 ## What is SABnzbd?
 
@@ -24,13 +24,13 @@ In your browser, go to [http://{your-ip-address}:8080/]() and you'll see SABnzbd
 
 [![sabnzbd-1](../pics/sabnzbd-1.png)](../pics/sabnzbd-1.png)
 
-Next up, you'll need to choose a Usenet server. [Newshosting](https://www.newshosting.com/) usually has good deals going on, but you can use whatever server you prefer! 
+Next up, you'll need to choose a Usenet server. [Newshosting](https://www.newshosting.com/) usually has good deals going on, but you can use whatever server you prefer!
 
 When you've got your server details ready, input them and click on "Next".
 
 [![sabnzbd-2](../pics/sabnzbd-2.png)](../pics/sabnzbd-2.png)
 
-You should now see the final wizard page - congrats! 🎉 
+You should now see the final wizard page - congrats! 🎉
 
 You'll notice the Completed and Uncompleted download folders aren't quite where we want them. Don't worry, we'll fix that in a minute!
 
@@ -55,7 +55,7 @@ Now, click on "Folders" and let's get those paths sorted:
 
 ## Getting your API key for Sonarr and Radarr
 
-You'll need this API key later when we set up Radarr and Sonarr. Feel free to skip this section for now if you want - you can always come back! 
+You'll need this API key later when we set up Radarr and Sonarr. Feel free to skip this section for now if you want - you can always come back!
 
 To get your API key:
 
@@ -69,4 +69,4 @@ Then, go to "General" and scroll down to "Security". You'll find your API Key ri
 
 ## That's done! 🎉
 
-Excellent! Now we can move forward with [Radarr](/config/radarr). Get ready - this is where things start getting really fun! 😄
+Excellent! Now we can move forward with [Radarr](radarr.md). Get ready - this is where things start getting really fun! 😄

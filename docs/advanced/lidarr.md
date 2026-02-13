@@ -42,7 +42,7 @@ You should see your new "Music" root folder.
 
 ### Download Clients
 
-Here, you'll add the download clients for Lidarr. That's where you'll tie in Lidarr with [qBittorrent](/config/qbittorrent).
+Here, you'll add the download clients for Lidarr. That's where you'll tie in Lidarr with [qBittorrent](../config/qbittorrent.md).
 
 In "Settings", go to "Download Clients" and click on the ➕ button.
 
@@ -59,7 +59,7 @@ On the "Add Download Client" screen, scroll down and click on "qBittorrent".
 
 [![lidarr-7](../pics/lidarr-7.png)](../pics/lidarr-7.png)
 
-At the bottom, you can click on "Test" and if everything is OK you should see a ✅ 
+At the bottom, you can click on "Test" and if everything is OK you should see a ✅
 [![radarr-10](../pics/radarr-10.png)](../pics/radarr-10.png)
 [![radarr-11](../pics/radarr-11.png)](../pics/radarr-11.png)
 
@@ -91,7 +91,7 @@ On the "Add Application" modal, click on "Lidarr"
 
 [![lidarr-12](../pics/lidarr-12.png)](../pics/lidarr-12.png)
 
-At the bottom, you can click on "Test" and if everything is OK you should see a ✅ 
+At the bottom, you can click on "Test" and if everything is OK you should see a ✅
 [![sonarr-10](../pics/sonarr-10.png)](../pics/sonarr-10.png)
 [![sonarr-11](../pics/sonarr-11.png)](../pics/sonarr-11.png)
 
@@ -99,7 +99,7 @@ To finish, click on "Save". You should see Lidarr added to the "Apps" list!
 
 [![lidarr-13](../pics/lidarr-13.png)](../pics/lidarr-13.png)
 
-**Remeber to add Music indexers!**. You won't be able to download if you don't add Music indexers in Prowlarr. To add indexers, go to [Prowlarr's Indexer configuration](/config/prowlarr/#indexers).
+**Remeber to add Music indexers!**. You won't be able to download if you don't add Music indexers in Prowlarr. To add indexers, go to [Prowlarr's Indexer configuration](../config/prowlarr.md#indexers).
 
 ## Usage
 

@@ -82,7 +82,7 @@ In your browser, go to [http://{your-ip-address}:32400/web]() and you'll see Ple
 
 [![plex-1](../pics/plex-1.png)](../pics/plex-1.png)
 
-After logging in, you'll see a "Plex Pass" modal. You can close that for now - we'll get to the good stuff! 
+After logging in, you'll see a "Plex Pass" modal. You can close that for now - we'll get to the good stuff!
 
 [![plex-2](../pics/plex-2.png)](../pics/plex-2.png)
 
@@ -90,7 +90,7 @@ Give your server a name and click "Next".
 
 [![plex-3](../pics/plex-3.png)](../pics/plex-3.png)
 
-For "Sync Your Watch State and Ratings", just click "No" - keeping things simple! 
+For "Sync Your Watch State and Ratings", just click "No" - keeping things simple!
 
 [![plex-4](../pics/plex-4.png)](../pics/plex-4.png)
 
@@ -152,13 +152,13 @@ Welcome to your Plex dashboard! 🎉 Click on "More" in the left side panel.
 
 [![plex-16](../pics/plex-16.png)](../pics/plex-16.png)
 
-There they are - your local "Movies" and "TV Shows" libraries! 
+There they are - your local "Movies" and "TV Shows" libraries!
 
 [![plex-17](../pics/plex-17.png)](../pics/plex-17.png)
 
 ## That's all folks! 🎬
 
-YAMS is fully up and running! Ready to add some content? Head over to [Running everything together](/config/running-everything-together)!
+YAMS is fully up and running! Ready to add some content? Head over to [Running everything together](running-everything-together.md)!
 
 ## Want to become a Plex power user? 💪
 

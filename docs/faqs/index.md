@@ -41,7 +41,7 @@ Please visit [zavan/yams on GitLab](https://gitlab.com/zavan/yams) to access the
 ## Advanced Usage
 
 ### How do I add custom containers?
-Easy! Check out our [Adding Custom Containers](/advanced/add-your-own-containers/) guide. You can add any Docker container to work alongside YAMS.
+Easy! Check out our [Adding Custom Containers](../advanced/add-your-own-containers.md) guide. You can add any Docker container to work alongside YAMS.
 
 ### Can I modify YAMS's default settings?
 Absolutely! While YAMS comes with sensible defaults, you can customize:
@@ -60,17 +60,17 @@ Check out [TRaSH Guides](https://trash-guides.info/) - they're fantastic for dee
 Yes! Everything's documented in the [VPN guide](https://github.com/qdm12/gluetun-wiki/blob/main/setup/connect-a-container-to-gluetun.md). Your config file is in `/opt/yams/docker-compose.yaml` (or your custom install location).
 
 ### Which VPN providers work with YAMS?
-We support many popular providers! Check our [VPN Configuration](/advanced/vpn/#official-supported-vpns) page for the full list.
+We support many popular providers! Check our [VPN Configuration](../advanced/vpn.md#official-supported-vpns) page for the full list.
 
 ## Troubleshooting
 
 ### Getting Docker permission errors?
-Common issue! Check our [Common Errors](/faqs/common-errors/#common-docker-permission-errors) page for the fix.
+Common issue! Check our [Common Errors](common-errors.md#common-docker-permission-errors) page for the fix.
 
 ### Services not starting?
 1. Check the logs: `docker logs container-name`
 2. Verify permissions
-3. Check our [Common Issues](/faqs/common-errors/) page
+3. Check our [Common Issues](common-errors.md) page
 
 ## Getting Help 🆘
 
@@ -78,7 +78,7 @@ Need more help? We've got you covered!
 
 1. **Documentation**
    - Check relevant service docs
-   - Review our [Common Issues](/faqs/common-errors/) page
+   - Review our [Common Issues](common-errors.md) page
    - Search existing forum posts
 
 2. **Community**

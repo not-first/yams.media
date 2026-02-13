@@ -20,7 +20,7 @@ These instructions work for both Radarr and Sonarr. To keep things simple, I'll 
 
 Open Radarr at [http://{your-ip-address}:7878/]() and click on "Add New" in the left menu. For this demo, I'll use "The Godfather" (because it's a classic!), but you can search for any movie you want.
 
-Pro tip: For your first test, pick something popular - it'll be easier to find! 
+Pro tip: For your first test, pick something popular - it'll be easier to find!
 
 [![running-everything-together-1](../pics/running-everything-together-1.png)](../pics/running-everything-together-1.png)
 
@@ -28,7 +28,7 @@ Click on the movie you want to download:
 
 [![running-everything-together-2](../pics/running-everything-together-2.png)](../pics/running-everything-together-2.png)
 
-Now you can pick your quality preferences. If your movie is part of a collection (like The Godfather is), you can choose to download the whole series in the "Monitor" box. I'm going for the whole trilogy because, well, why not? 
+Now you can pick your quality preferences. If your movie is part of a collection (like The Godfather is), you can choose to download the whole series in the "Monitor" box. I'm going for the whole trilogy because, well, why not?
 
 Finally, click "Add Movie"!
 
@@ -63,7 +63,7 @@ Emby:
 Plex:
 [![running-everything-together-11](../pics/running-everything-together-11.png)](../pics/running-everything-together-11.png)
 
-Open up a movie and look - subtitles are already there! That's [Bazarr](/config/bazarr) doing its thing! 🎯
+Open up a movie and look - subtitles are already there! That's [Bazarr](bazarr.md) doing its thing! 🎯
 
 [![running-everything-together-8](../pics/running-everything-together-8.png)](../pics/running-everything-together-8.png)
 
@@ -95,12 +95,12 @@ roger@debian:/srv/media/movies$ tree .
 3 directories, 9 files
 ```
 
-Not a fan of how things are named? No problem! You can always change the naming format in [Radarr's media management page](/config/radarr#media-management) or [Sonarr's settings](/config/sonarr#media-management).
+Not a fan of how things are named? No problem! You can always change the naming format in [Radarr's media management page](radarr.md#media-management) or [Sonarr's settings](sonarr.md#media-management).
 
 # Final step and conclusions
 
 You did it! 🎉 You've got your very own media server up and running! That's a huge step toward breaking free from subscription services like Netflix or Amazon Prime.
 
-And guess what? There's still so much more you can do to make your setup even better! Head over to the [Recommendations](/config/recommendations) page for some cool ideas on what to try next.
+And guess what? There's still so much more you can do to make your setup even better! Head over to the [Recommendations](recommendations.md) page for some cool ideas on what to try next.
 
  🙌 Thanks for following along with the tutorial! Hope you enjoy your awesome new media server - you've earned it! 😎

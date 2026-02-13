@@ -137,9 +137,9 @@ By default, YAMS uses **OpenVPN** for Gluetun. But if your VPN provider supports
 
 We recommend ProtonVPN for this, and we’ve written a full guide to help you switch:
 
-👉 [Switching Gluetun to WireGuard](/advanced/wireguard/)
+👉 [Switching Gluetun to WireGuard](wireguard.md)
 
-> 💡 If you store your WireGuard private key in the `.env` file, make sure to read the [Environment File Guide](/advanced/env-file/) to learn how to manage secrets securely.
+> 💡 If you store your WireGuard private key in the `.env` file, make sure to read the [Environment File Guide](env-file.md) to learn how to manage secrets securely.
 
 ## ProtonVPN Free Tier 🆓
 
@@ -206,12 +206,12 @@ For more details on ProtonVPN's free tier and Gluetun, refer to the [gluetun Pro
 
 ## Need Extra Security? 🛡️
 
-Want to double-check that your torrent client is really using the VPN? Head over to [Double-checking your torrent client IP address](/advanced/torrenting/#double-checking-your-torrent-client-ip-address) for a detailed guide!
+Want to double-check that your torrent client is really using the VPN? Head over to [Double-checking your torrent client IP address](torrenting.md#double-checking-your-torrent-client-ip-address) for a detailed guide!
 
 ## Still Need Help? 🆘
 
 If you're stuck:
-1. Check our [Common Issues](/faqs/common-errors/#gluetun-does-not-connect) page
+1. Check our [Common Issues](../faqs/common-errors.md#gluetun-does-not-connect) page
 2. Visit the [YAMS Forum](https://forum.yams.media)
 3. Join our [Discord](https://discord.gg/Gwae3tNMST)
 

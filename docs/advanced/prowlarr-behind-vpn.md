@@ -153,7 +153,7 @@ yams check-vpn
 ## Need Help? 🆘
 
 If you're stuck:
-1. Check the [Common Issues](/faqs/common-errors/) page
+1. Check the [Common Issues](../faqs/common-errors.md) page
 2. Visit the [YAMS Forum](https://forum.yams.media)
 3. Join our [Discord](https://discord.gg/Gwae3tNMST)
 

@@ -25,13 +25,13 @@ Create your username and password, then click save:
 
 [![sonarr-18](../pics/sonarr-18.png)](../pics/sonarr-18.png)
 
-You'll see Sonarr's empty page. Don't mind those 3 system messages - we'll get to them later! 
+You'll see Sonarr's empty page. Don't mind those 3 system messages - we'll get to them later!
 
 [![sonarr-1](../pics/sonarr-1.png)](../pics/sonarr-1.png)
 
 ### Media management
 
-Let's tell Sonarr how to handle our TV shows! Go to "Settings" and then "Media management". Here's what we need to do: 
+Let's tell Sonarr how to handle our TV shows! Go to "Settings" and then "Media management". Here's what we need to do:
 - Click on "Show Advanced" (it sounds scary but we'll keep it simple!)
 - Check the "Rename Episodes" box
 - Set up these naming formats:
@@ -58,7 +58,7 @@ Finally, click on "Save Changes".
 
 ### Download Clients
 
-Time to connect Sonarr to our download tools! We'll link up with [qBittorrent](/config/qbittorrent) and [SABnzbd](/config/sabnzbd).
+Time to connect Sonarr to our download tools! We'll link up with [qBittorrent](qbittorrent.md) and [SABnzbd](sabnzbd.md).
 
 #### qBittorrent Setup
 
@@ -79,7 +79,7 @@ Fill in these details:
 
 [![sonarr-15](../pics/sonarr-15.png)](../pics/sonarr-15.png)
 
-Hit that "Test" button - if everything's working, you'll see a happy green checkmark! ✅ 
+Hit that "Test" button - if everything's working, you'll see a happy green checkmark! ✅
 [![sonarr-10](../pics/sonarr-10.png)](../pics/sonarr-10.png)
 [![sonarr-11](../pics/sonarr-11.png)](../pics/sonarr-11.png)
 
@@ -103,11 +103,11 @@ Fill in these details:
 - Port: 8080
 - API Key: your SABnzbd API key
 
-Need to find your SABnzbd API key? No problem! Check here: [Getting your API key for Sonarr and Radarr](/config/sabnzbd/#getting-your-api-key-for-sonarr-and-radarr)
+Need to find your SABnzbd API key? No problem! Check here: [Getting your API key for Sonarr and Radarr](sabnzbd.md#getting-your-api-key-for-sonarr-and-radarr)
 
 [![sonarr-20](../pics/sonarr-20.png)](../pics/sonarr-20.png)
 
-Another test time! Click "Test" - hopefully another green checkmark! ✅ 
+Another test time! Click "Test" - hopefully another green checkmark! ✅
 [![sonarr-10](../pics/sonarr-10.png)](../pics/sonarr-10.png)
 [![sonarr-11](../pics/sonarr-11.png)](../pics/sonarr-11.png)
 
@@ -117,7 +117,7 @@ If the test passed, hit "Save". You should now see both download clients ready t
 
 ## Moving forward! 🚀
 
-That's it! Now we can move on to [Prowlarr](/config/prowlarr). We're getting close to having your own personal streaming service! 
+That's it! Now we can move on to [Prowlarr](prowlarr.md). We're getting close to having your own personal streaming service!
 
 ## Want to become a Sonarr power user?
 
