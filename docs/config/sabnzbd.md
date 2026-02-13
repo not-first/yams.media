@@ -1,10 +1,4 @@
----
-title: "SABnzbd"
-date: 2023-01-10T18:02:13-03:00
-weight: 2
-draft: false
-summary: SABnzbd is a program to download binary files from Usenet servers. Many people upload all sorts of interesting material to Usenet and you need a special program to get this material with the least effort.
----
+# SABnzbd
 
 ## Note - SABnzbd is optional
 

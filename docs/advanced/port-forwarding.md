@@ -1,10 +1,4 @@
----
-title: "Port Forwarding"
-date: 2024-12-30T10:14:29-03:00
-draft: false
-weight: 50
-summary: Everything you need to know about configuring and using a VPN with YAMS
----
+# Port Forwarding
 
 Port forwarding helps you get better download speeds by allowing incoming connections to your torrent client. YAMS enables port forwarding by default, but setup varies by VPN provider.
 

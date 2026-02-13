@@ -1,11 +1,3 @@
----
-title: "VPN"
-date: 2023-01-15T21:16:29-03:00
-draft: false
-weight: 40
-summary: Everything you need to know about configuring and using a VPN with YAMS
----
-
 # Keeping Your Downloads Private 🔒
 
 Let's talk about VPNs! While they might seem like an optional extra, **you should always use a VPN when downloading torrents**. It's not just about privacy - it's about keeping you safe and sound on the internet!

@@ -1,11 +1,3 @@
----
-title: "Portainer"
-date: 2023-01-30T15:46:05-03:00
-draft: false
-weight: 90
-summary: Your visual control center for all YAMS containers
----
-
 # What is Portainer? 🐋
 
 Think of Portainer as your mission control for Docker! It gives you a sleek web interface to manage all your containers, making it way easier than typing commands in the terminal all day.

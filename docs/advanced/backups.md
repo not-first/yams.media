@@ -1,11 +1,3 @@
----
-title: "Backups"
-date: 2023-01-17T19:38:39-03:00
-draft: false
-weight: 80
-summary: Everything you need to know about backing up and restoring your YAMS setup
----
-
 # Keeping Your YAMS Safe 💾
 
 Your YAMS configuration is precious! Let's make sure it's properly backed up so you can recover from any mishaps.

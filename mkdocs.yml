@@ -22,20 +22,21 @@ theme:
   logo: pics/logo.png
   favicon: favicon.ico
   custom_dir: overrides
+  language: en
 
   # Color palette - dual theme toggle
   palette:
     # Light mode
-    - scheme: default
-      primary: white
+    - scheme: yams
+      primary: green
       accent: green
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
 
     # Dark mode
-    - scheme: slate
-      primary: black
+    - scheme: yams-dark
+      primary: green
       accent: green
       toggle:
         icon: material/weather-night
@@ -56,18 +57,25 @@ theme:
     - content.action.view
 
 # Custom CSS
-# extra_css:
-#   - stylesheets/extra.css
+extra_css:
+  - stylesheets/extra.css
 
 # Plugins
 plugins:
   - search
-  - git-committers:
-      repository: not-first/yams.media
-      branch: mkdocs-material
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
 
 # Social links
 extra:
+  alternate:
+    - name: English
+      link: /
+      lang: en
+    - name: French
+      link: /fr/
+      lang: fr
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/Gwae3tNMST
@@ -139,22 +147,11 @@ nav:
 # Markdown extensions
 markdown_extensions:
   # Python Markdown
-  - abbr
-  - admonition
   - attr_list
-  - def_list
-  - footnotes
-  - md_in_html
   - toc:
       permalink: true
 
   # Python Markdown Extensions
-  - pymdownx.arithmatex:
-      generic: true
-  - pymdownx.betterem:
-      smart_enable: all
-  - pymdownx.caret
-  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -162,13 +159,4 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.smartsymbols
   - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde

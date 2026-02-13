@@ -1,10 +1,3 @@
----
-title: "Donate"
-date: 2023-01-11T09:13:34-03:00
-draft: false
-weight: 100
----
-
 # Support the Awesome People Behind YAMS 💖
 
 Let's talk about something important: supporting the incredible projects and people that make YAMS possible! 🚀

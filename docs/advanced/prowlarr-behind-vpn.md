@@ -1,11 +1,3 @@
----
-title: "Running Prowlarr Behind the VPN"
-date: 2024-09-27T16:44:00-03:00
-draft: false
-weight: 60
-summary: A complete guide to routing Prowlarr's traffic through your VPN for extra privacy
----
-
 # Extra Privacy for Prowlarr 🔒
 
 While downloading .torrent files isn't usually illegal, some ISPs might try to block your access to indexers. Let's fix that by putting Prowlarr behind your VPN!

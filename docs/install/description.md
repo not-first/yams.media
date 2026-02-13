@@ -1,11 +1,3 @@
----
-title: "What is YAMS?"
-date: 2023-01-10T15:23:19-03:00
-draft: false
-weight: 1
-summary: Everything you need to know about YAMS and what makes it awesome
----
-
 # Welcome to YAMS! 🎬
 
 YAMS (Yet Another Media Server) is an **opinionated** media server that just works. No fuss, no complexity - just a smooth, automated media experience that you can set up in minutes!

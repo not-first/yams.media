@@ -1,12 +1,3 @@
----
-title: "Emby"
-date: 2023-01-10T19:07:29-03:00
-draft: false
-weight: 8
-summary: Emby brings together your personal videos, music, photos, and live television. Emby Server automatically converts and streams your personal media on the fly to play on any device.
-
----
-
 # What is Emby?
 
 From their [website](https://emby.media/about.html):

@@ -1,8 +1,3 @@
----
-title: YAMS - Yet Another Media Server
-description: A basic but powerful media server installation script
----
-
 # YAMS - Yet Another Media Server
 
 YAMS is a basic but powerful media server installation script that helps you set up your complete media automation stack with ease.

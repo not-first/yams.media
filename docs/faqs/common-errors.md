@@ -1,11 +1,3 @@
----
-title: "Common Issues"
-date: 2023-10-22T10:22:29-03:00
-draft: false
-weight: 1
-summary: Solutions for common YAMS problems and how to fix them
----
-
 # Common YAMS Issues & Solutions 🔧
 
 ## Docker Issues

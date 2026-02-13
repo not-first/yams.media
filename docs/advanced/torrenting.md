@@ -1,11 +1,3 @@
----
-title: "Torrenting"
-date: 2023-01-16T14:48:14-03:00
-draft: false
-weight: 70
-summary: Everything you need to know about safe and effective torrenting with YAMS
----
-
 # Advanced Torrenting with YAMS 🌊
 
 While [Sonarr](../config/sonarr.md) and [Radarr](../config/radarr.md) handle most of your downloads automatically, sometimes you might want to download something manually. Let's explore how to do that safely!

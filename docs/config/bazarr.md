@@ -1,11 +1,3 @@
----
-title: "Bazarr"
-date: 2023-01-10T19:06:54-03:00
-draft: false
-weight: 6
-summary: Bazarr is a companion application to Sonarr and Radarr that manages and downloads subtitles based on your requirements.
----
-
 # What is Bazarr?
 
 From their [website](https://www.bazarr.media/):

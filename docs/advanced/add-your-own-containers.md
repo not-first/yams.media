@@ -1,11 +1,3 @@
----
-title: "Adding your own containers to YAMS"
-date: 2023-10-21T21:41:29-03:00
-draft: false
-weight: 20
-summary: A complete guide to expanding YAMS with your own Docker containers
----
-
 # Make YAMS Your Own! 🚀
 
 Want to add more containers to your YAMS setup? Maybe a cool new app you found, or something specific for your needs? No problem! YAMS makes it super easy to expand your media server with custom containers.

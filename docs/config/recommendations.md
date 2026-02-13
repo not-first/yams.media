@@ -1,11 +1,3 @@
----
-title: "Recommendations"
-date: 2023-01-12T19:09:55-03:00
-draft: false
-weight: 100
-summary: Final recommendations, how to continue?
----
-
 # What should YOU do now?
 
 Everything is working now! Yay! 🎉

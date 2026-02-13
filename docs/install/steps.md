@@ -1,9 +1,4 @@
----
-title: Installation
-date: 2023-01-10T15:23:20-03:00
-weight: 2
-summary: First steps to install YAMS on your server
----
+# Installation
 
 ## Dependencies
 

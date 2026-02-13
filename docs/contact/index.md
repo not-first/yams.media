@@ -1,10 +1,3 @@
----
-title: "Contact"
-date: 2023-01-13T14:47:17-03:00
-draft: false
-weight: 100
----
-
 # Let's Connect! 🤝
 
 Got questions? Suggestions? Just want to say hi? We've got plenty of ways to reach out!

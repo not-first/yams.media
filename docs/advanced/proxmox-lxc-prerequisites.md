@@ -1,11 +1,3 @@
----
-title: "Proxmox LXC Prerequisites"
-date: 2025-03-29T10:00:00-03:00
-draft: false
-weight: 10
-summary: Required steps before installing YAMS in a Proxmox LXC container.
----
-
 # Prerequisites for Installing YAMS in a Proxmox LXC
 
 If you plan to install YAMS inside a Proxmox LXC container, some specific host-level configuration is required **before** you run the YAMS installation script. These steps ensure Docker and the VPN component (Gluetun) can function correctly within the LXC environment by providing access to the necessary TUN device.

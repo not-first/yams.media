@@ -1,11 +1,3 @@
----
-title: "Jellyfin"
-date: 2023-01-23T11:58:49-03:00
-draft: false
-weight: 7
-summary: Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
----
-
 # What is Jellyfin?
 
 From their [website](https://jellyfin.org/):

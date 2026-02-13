@@ -1,11 +1,3 @@
----
-title: "Using the CLI"
-date: 2023-01-10T17:55:41-03:00
-draft: false
-weight: 3
-summary: Master YAMS's powerful command-line interface - your Swiss Army knife for managing your media server!
----
-
 # The YAMS Command Line: Your Media Server's Best Friend 🛠️
 
 YAMS comes with a super handy command-line interface (CLI) that makes managing your media server a breeze! Think of it as your media server's remote control - but cooler. 😎

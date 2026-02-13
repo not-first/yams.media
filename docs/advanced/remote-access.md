@@ -1,11 +1,3 @@
----
-title: "Exposing YAMS to the Internet"
-date: 2025-09-15T13:28:00-03:00
-draft: false
-weight: 85
-summary: Learn about the challenges and solutions for making your YAMS server accessible from anywhere on the internet
----
-
 # Making YAMS Available from Anywhere 🌐
 
 Want to access your YAMS server while you're away from home? Maybe stream your movies during a business trip or let family members access your media server from their own homes? This guide covers your options - but first, let's talk about why this is tricky! 🤔
