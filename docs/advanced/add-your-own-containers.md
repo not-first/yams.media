@@ -1,4 +1,4 @@
-# Make YAMS Your Own! 🚀
+# Adding your own containers to YAMS
 
 Want to add more containers to your YAMS setup? Maybe a cool new app you found, or something specific for your needs? No problem! YAMS makes it super easy to expand your media server with custom containers.
 

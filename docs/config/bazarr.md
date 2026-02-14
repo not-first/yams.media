@@ -1,4 +1,4 @@
-# What is Bazarr?
+# Bazarr
 
 From their [website](https://www.bazarr.media/):
 

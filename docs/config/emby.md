@@ -1,4 +1,4 @@
-# What is Emby?
+# Emby
 
 From their [website](https://emby.media/about.html):
 

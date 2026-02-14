@@ -1,4 +1,4 @@
-# Keeping Your Downloads Private 🔒
+# VPN
 
 Let's talk about VPNs! While they might seem like an optional extra, **you should always use a VPN when downloading torrents**. It's not just about privacy - it's about keeping you safe and sound on the internet!
 

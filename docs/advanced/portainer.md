@@ -1,4 +1,4 @@
-# What is Portainer? 🐋
+# Portainer
 
 Think of Portainer as your mission control for Docker! It gives you a sleek web interface to manage all your containers, making it way easier than typing commands in the terminal all day.
 

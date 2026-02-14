@@ -1,4 +1,4 @@
-# What is Plex?
+# Plex
 
 From their [website](https://www.plex.tv/):
 

@@ -1,4 +1,4 @@
-# Keeping Your YAMS Safe 💾
+# Backups
 
 Your YAMS configuration is precious! Let's make sure it's properly backed up so you can recover from any mishaps.
 

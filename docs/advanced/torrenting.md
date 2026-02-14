@@ -1,4 +1,4 @@
-# Advanced Torrenting with YAMS 🌊
+# Torrenting
 
 While [Sonarr](../config/sonarr.md) and [Radarr](../config/radarr.md) handle most of your downloads automatically, sometimes you might want to download something manually. Let's explore how to do that safely!
 

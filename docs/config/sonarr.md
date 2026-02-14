@@ -1,4 +1,4 @@
-# What is Sonarr?
+# Sonarr
 
 From their [wiki](https://wiki.servarr.com/sonarr):
 

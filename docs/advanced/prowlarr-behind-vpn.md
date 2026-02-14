@@ -1,4 +1,4 @@
-# Extra Privacy for Prowlarr 🔒
+# Running Prowlarr Behind the VPN
 
 While downloading .torrent files isn't usually illegal, some ISPs might try to block your access to indexers. Let's fix that by putting Prowlarr behind your VPN!
 

@@ -1,4 +1,4 @@
-# Support the Awesome People Behind YAMS 💖
+# Donate
 
 Let's talk about something important: supporting the incredible projects and people that make YAMS possible! 🚀
 

@@ -1,4 +1,4 @@
-# What is Radarr?
+# Radarr
 
 From their [wiki](https://wiki.servarr.com/radarr):
 

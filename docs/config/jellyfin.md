@@ -1,4 +1,4 @@
-# What is Jellyfin?
+# Jellyfin
 
 From their [website](https://jellyfin.org/):
 

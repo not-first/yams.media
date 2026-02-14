@@ -1,4 +1,4 @@
-# Let's Connect! 🤝
+# Contact
 
 Got questions? Suggestions? Just want to say hi? We've got plenty of ways to reach out!
 

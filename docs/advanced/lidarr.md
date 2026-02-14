@@ -1,4 +1,4 @@
-# What is Lidarr?
+# Lidarr
 
 From their [wiki](https://lidarr.audio/):
 

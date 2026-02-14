@@ -1,4 +1,4 @@
-# What should YOU do now?
+# Recommendations
 
 Everything is working now! Yay! 🎉
 

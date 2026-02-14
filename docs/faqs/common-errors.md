@@ -1,4 +1,4 @@
-# Common YAMS Issues & Solutions 🔧
+# Common Issues
 
 ## Docker Issues
 

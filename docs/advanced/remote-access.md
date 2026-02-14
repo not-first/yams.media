@@ -1,4 +1,4 @@
-# Making YAMS Available from Anywhere 🌐
+# Exposing YAMS to the Internet
 
 Want to access your YAMS server while you're away from home? Maybe stream your movies during a business trip or let family members access your media server from their own homes? This guide covers your options - but first, let's talk about why this is tricky! 🤔
 
