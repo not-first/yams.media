@@ -34,7 +34,6 @@ theme:
     # Light mode
     - scheme: yams
       primary: green
-      accent: green
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
@@ -42,7 +41,6 @@ theme:
     # Dark mode
     - scheme: yams-dark
       primary: green
-      accent: green
       toggle:
         icon: material/weather-night
         name: Switch to light mode
