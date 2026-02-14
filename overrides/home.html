@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+
+{#
+Custom homepage, following Material's pattern:
+- Tabs render as usual via {{ super() }}
+- Hero is rendered under the tabs
+- Sidebars, markdown content, and prev/next nav are hidden only here
+- Footer still renders
+#}
+
+{% block tabs %}
+{{ super() }}
+
+<style>
+  /* Remove inner spacing so hero can take full width */
+  .md-main__inner {
+    margin: 0;
+  }
+
+  /* Hide default Markdown content area on the homepage */
+  .md-content {
+    display: none;
+  }
+
+  /* Hide table of contents on the homepage */
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+
+  /* Hide left navigation on the homepage */
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+
+  /* Hide previous/next navigation but keep footer meta */
+  .md-footer-nav {
+    display: none;
+  }
+</style>
+
+<!-- Custom Home Page Hero -->
+<section class="yams-hero">
+  <div class="yams-hero-content">
+    <h1 class="yams-hero-title">YAMS - Yet Another Media Server</h1>
+    <p class="yams-hero-subtitle">YAMS is a basic but powerful media server installation script</p>
+    <a href="{{ 'install/' | url }}" class="md-button md-button--primary yams-hero-button">LEARN MORE</a>
+  </div>
+
+  <div class="yams-hero-demo">
+    <img src="{{ 'install-yams.gif' | url }}" alt="YAMS Installation Demo" class="yams-terminal-gif">
+  </div>
+</section>
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+{{ super() }}
+{% endblock %}

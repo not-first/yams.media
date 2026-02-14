@@ -24,6 +24,11 @@ theme:
   custom_dir: overrides
   language: en
 
+  # Font configuration
+  font:
+    text: Roboto
+    code: Roboto Mono
+
   # Color palette - dual theme toggle
   palette:
     # Light mode
@@ -73,9 +78,9 @@ extra:
     - name: English
       link: /
       lang: en
-    - name: French
-      link: /fr/
-      lang: fr
+    # - name: French
+    #   link: /fr/
+    #   lang: fr
   social:
     - icon: fontawesome/brands/discord
       link: https://discord.gg/Gwae3tNMST
