@@ -111,7 +111,7 @@ For detailed provider-specific instructions, check the [Gluetun Port Forwarding 
 ## Verifying Port Forwarding ✅
 To check if port forwarding is working:
 
-1. Run `curl http://localhost:8003/v1/openvpn/portforwarded` to see your current port
+1. Run `curl http://localhost:8003/v1/portforward` to see which port is currently forwarded by your VPN. Note this port number for the next step.
 2. Visit [Open Port Check Tool](https://www.yougetsignal.com/tools/open-ports/) and test your port by using your public VPN IP and the active port
 3. Check qBittorrent's connection status - it should show "Connection Status: Connected"
 
